@@ -10,21 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var about_component_1 = require('./about.component');
-var appRoutes = [
-    { path: 'about', component: about_component_1.AboutComponent },
-    { path: '', redirectTo: 'cars', pathMatch: 'full' }
-];
-var AppRouting = (function () {
-    function AppRouting() {
+//import { Car } from './car';
+//import { CarService } from './car.service'
+var ProjectListComponent = (function () {
+    //cars: Car[];
+    function ProjectListComponent(router) {
+        this.router = router;
     }
-    AppRouting = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
-            exports: [router_1.RouterModule]
+    ProjectListComponent.prototype.getCars = function () {
+        //this.carService.getCars().then(cars => this.cars = cars);
+    };
+    ProjectListComponent.prototype.ngOnInit = function () {
+        //this.getCars();
+    };
+    ProjectListComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'project-list.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppRouting);
-    return AppRouting;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], ProjectListComponent);
+    return ProjectListComponent;
 }());
-exports.AppRouting = AppRouting;
+exports.ProjectListComponent = ProjectListComponent;
