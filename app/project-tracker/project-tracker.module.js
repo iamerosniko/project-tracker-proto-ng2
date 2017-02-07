@@ -16,11 +16,8 @@ var http_1 = require('@angular/http');
 //import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
 //Components
-var project_list_component_1 = require('./project-list.component');
-//import { CarDetailComponent } from './car-detail.component';
-//import { CarFormComponent } from './car-form.component';
-//import { CarsListComponent } from './cars-list.component';
-//import { CarEditComponent } from './car-edit.component';
+var project_list_component_1 = require('./projects/project-list.component');
+var project_tracker_component_1 = require('./project-tracker.component');
 //import { CarService } from './car.service';
 var project_tracker_routing_1 = require('./project-tracker.routing');
 var ProjectTrackerModule = (function () {
@@ -36,7 +33,8 @@ var ProjectTrackerModule = (function () {
                 project_tracker_routing_1.ProjectTrackerRouting
             ],
             declarations: [
-                project_list_component_1.ProjectListComponent
+                project_list_component_1.ProjectListComponent,
+                project_tracker_component_1.ProjectTrackerComponent
             ],
             providers: []
         }), 

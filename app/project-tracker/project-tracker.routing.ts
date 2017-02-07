@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-//import { CarDetailComponent } from './car-detail.component';
-//import { CarFormComponent } from './car-form.component';
-//import { CarsListComponent } from './cars-list.component';
-//import { CarEditComponent } from './car-edit.component';
-import { ProjectListComponent } from './project-list.component';
+//component
+import { ProjectListComponent } from './projects/project-list.component';
+import { ProjectTrackerComponent } from './project-tracker.component';
 const projectTrackerRoutes: Routes = [
-    //{path: 'cars', component: CarsListComponent},
-    //{path: 'car/create', component: CarFormComponent},
-    //{path: 'car/:id', component: CarDetailComponent},
-    //{path: 'caredit/:id', component: CarEditComponent}
-    { path : 'project-tracker', component: ProjectListComponent }
+    //paths
+    { path : 'project-tracker', component: ProjectTrackerComponent },
+    { path : 'project-list', component : ProjectListComponent }
+
 ];
 
  @NgModule ({
-     imports: [ RouterModule.forChild(projectTrackerRoutes) ],
+     imports: [ RouterModule.forRoot(projectTrackerRoutes, {useHash:true}) ],
      exports: [ RouterModule ]
  })
 

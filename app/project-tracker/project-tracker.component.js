@@ -9,27 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-//import { Car } from './car';
-//import { CarService } from './car.service'
-var ProjectListComponent = (function () {
-    //cars: Car[];
-    function ProjectListComponent(router) {
-        this.router = router;
+var ProjectTrackerComponent = (function () {
+    function ProjectTrackerComponent() {
     }
-    ProjectListComponent.prototype.getCars = function () {
-        //this.carService.getCars().then(cars => this.cars = cars);
-    };
-    ProjectListComponent.prototype.ngOnInit = function () {
-        //this.getCars();
-    };
-    ProjectListComponent = __decorate([
+    ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'project-list.component.html'
+            template: "\n    <div class=\"panel-body\">\n        <ul class=\"nav nav-tabs\">\n            <li role=\"presentation\"><a routerLink=\"/project-list\">New Project</a></li>\n        </ul>\n        <router-outlet></router-outlet>\n        <project-list></project-list>\n    </div>\n    "
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], ProjectListComponent);
-    return ProjectListComponent;
+        __metadata('design:paramtypes', [])
+    ], ProjectTrackerComponent);
+    return ProjectTrackerComponent;
 }());
-exports.ProjectListComponent = ProjectListComponent;
+exports.ProjectTrackerComponent = ProjectTrackerComponent;

@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'project-list.component.html'
+    templateUrl: 'project-list.component.html',
+    selector: 'project-list'
 })
 
 export class ProjectListComponent implements OnInit{

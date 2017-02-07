@@ -2,17 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { Routes } from '@angular/router';
 //Imports for loading & configuring the in-memory web api
 //import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
 //Components
-import { ProjectListComponent } from './project-list.component'
-//import { CarDetailComponent } from './car-detail.component';
-//import { CarFormComponent } from './car-form.component';
-//import { CarsListComponent } from './cars-list.component';
-//import { CarEditComponent } from './car-edit.component';
-
+import { ProjectListComponent } from './projects/project-list.component';
+import { ProjectTrackerComponent } from './project-tracker.component';
 //import { CarService } from './car.service';
 
 import { ProjectTrackerRouting } from './project-tracker.routing';
@@ -26,7 +22,8 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         ProjectTrackerRouting
     ],
     declarations: [
-        ProjectListComponent
+        ProjectListComponent,
+        ProjectTrackerComponent
         //CarDetailComponent,
         //CarFormComponent,
         //CarsListComponent,
