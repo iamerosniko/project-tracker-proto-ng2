@@ -4,9 +4,10 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     template:`
     <div class="panel-body">
-        <ul class="nav nav-tabs">
-            <a class="btn btn-primary btn-sm" routerLink="/project-edit">New Project</a>
-        </ul>
+        
+        <a class="btn btn-primary btn-sm" routerLink="/project-edit">New Project</a>
+        
+        
         <router-outlet></router-outlet>
         <project-list></project-list>
     </div>
