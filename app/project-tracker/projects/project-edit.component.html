@@ -1,13 +1,13 @@
-<a class="btn btn-primary btn-sm" routerLink="/project-tracker">Back to List</a>
-<hr />
-<div [hidden]="!submitted">
-    <h3>Form successfully submitted!</h3>
-    <h4>Data: </h4>
-    <p>{{diagnostic}}</p>
-    <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
-</div>
-<div [hidden]="submitted">
-    <h2>Car Form</h2>
+<div class="panel-body">
+    <a class="btn btn-primary btn-sm" routerLink="/project-tracker">Back to List</a>
+    <hr />
+        <div [hidden]="!submitted">
+            <h3>Form successfully submitted!</h3>
+            <h4>Data: </h4>
+            <p>{{diagnostic}}</p>
+            <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
+        </div>
+    <h2>Project Edit Form</h2>
     <div class="alert alert-danger" role="alert">
         {{diagnostic}}
     </div>
@@ -97,5 +97,5 @@
         <br />
         <a class="btn btn-primary btn-sm" routerLink="/cars">Back to List</a>
     </form>
+    <hr />
 </div>
-<hr />

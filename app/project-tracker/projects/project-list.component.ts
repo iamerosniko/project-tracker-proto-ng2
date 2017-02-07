@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-//import { Car } from './car';
-//import { CarService } from './car.service'
-
 @Component({
     moduleId: module.id,
     templateUrl: 'project-list.component.html',

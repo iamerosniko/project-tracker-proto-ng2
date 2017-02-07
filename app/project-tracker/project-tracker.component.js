@@ -15,7 +15,7 @@ var ProjectTrackerComponent = (function () {
     ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            template: "\n    <div class=\"panel-body\">\n        <ul class=\"nav nav-tabs\">\n            <li role=\"presentation\"><a routerLink=\"/project-list\">New Project</a></li>\n        </ul>\n        <router-outlet></router-outlet>\n        <project-list></project-list>\n    </div>\n    "
+            template: "\n    <div class=\"panel-body\">\n        <ul class=\"nav nav-tabs\">\n            <a class=\"btn btn-primary btn-sm\" routerLink=\"/project-edit\">New Project</a>\n        </ul>\n        <router-outlet></router-outlet>\n        <project-list></project-list>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], ProjectTrackerComponent);

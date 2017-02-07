@@ -9,17 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var project_1 = require('./project');
 var ProjectEditComponent = (function () {
-    //cars: Car[];
-    function ProjectEditComponent(router) {
-        this.router = router;
+    function ProjectEditComponent() {
+        this.model = new project_1.Project(0, '', '');
+        this.submitted = false;
+        this.fuelTypes = [
+            'Petrol',
+            'Diesel',
+            'Hybrid',
+            'Electric'
+        ];
+        this.bodyStyle = [
+            'Convertibles',
+            'Coupes',
+            'Hatchbacks',
+            'Vans',
+            'Sedans',
+            'Suvs',
+            'Trucks',
+            'Wagons'
+        ];
     }
-    ProjectEditComponent.prototype.getProjectDetail = function () {
-        //this.carService.getCars().then(cars => this.cars = cars);
-    };
     ProjectEditComponent.prototype.ngOnInit = function () {
-        //this.getCars();
+        //this.route.params
+        //.switchMap((params: Params) => this.carService.getCar(+params['id'])) //the + value will convert id to number type
+        //.subscribe(car => this.model = car);
+    };
+    ProjectEditComponent.prototype.onSubmit = function () {
+        this.submitted = true;
+        //this.carService.putCar(this.model);
+        setTimeout(function () {
+            //this.router.navigate(['/cars'])
+        }, 2000);
     };
     ProjectEditComponent = __decorate([
         core_1.Component({
@@ -27,7 +49,7 @@ var ProjectEditComponent = (function () {
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());

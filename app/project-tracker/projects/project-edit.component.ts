@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute,  Params, Router } from '@angular/router';
+
+import { Project } from  './project';
 
 @Component({
     moduleId: module.id,
@@ -8,22 +10,46 @@ import { Router } from '@angular/router';
 })
 
 export class ProjectEditComponent implements OnInit{
-    //cars: Car[];
+    model = new Project(0, '', '');
+    submitted = false;
+    fuelTypes = [
+        'Petrol',
+        'Diesel',
+        'Hybrid',
+        'Electric' 
+    ];
+    bodyStyle = [
+        'Convertibles',
+        'Coupes',
+        'Hatchbacks',
+        'Vans',
+        'Sedans',
+        'Suvs',
+        'Trucks',
+        'Wagons'
+    ];
 
     constructor(
-        private router: Router,
-        //private carService: CarService
-    ) {}
-
-    getProjectDetail(): void {
-        //this.carService.getCars().then(cars => this.cars = cars);
-    }
+        //private carService: CarService,
+        //private route: ActivatedRoute,
+        //private router: Router
+    ){}
 
     ngOnInit(): void {
-        //this.getCars();
+        //this.route.params
+            //.switchMap((params: Params) => this.carService.getCar(+params['id'])) //the + value will convert id to number type
+            //.subscribe(car => this.model = car);
     }
 
-    //onSelect(car: Car) {
-        //this.router.navigate(['/car', car.id]);
-    //}
+    onSubmit(): void {
+        this.submitted = true;
+        //this.carService.putCar(this.model);
+
+        setTimeout(
+            () => {
+                //this.router.navigate(['/cars'])
+            }, 
+            2000
+        );
+    }
 }
