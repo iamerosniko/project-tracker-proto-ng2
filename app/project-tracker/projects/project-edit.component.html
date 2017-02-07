@@ -53,49 +53,25 @@
                 id="fuelType" 
                 class="form-control"
                 [(ngModel)]="model.fuelType"
+                required 
                 name="fuelType"
             >
                 <option *ngFor="let ft of fuelTypes" [value]="ft">{{ft}}</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="bodyStyle">Body Style</label>
-            <select 
+            <label for="bodyStyle">Owner</label>
+            <input 
                 id="bodyStyle" 
                 class="form-control"
                 [(ngModel)]="model.bodyStyle"
+                required
                 name="bodyStyle"
-            >
-                <option *ngFor="let bs of bodyStyle" [value]="bs">{{bs}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="topSpeed">Top Speed (mph)</label>
-            <input 
-                id="topSpeed" 
-                type="text" 
-                class="form-control" 
-                [(ngModel)]="model.topSpeed"
-                required 
-                name="topSpeed"
-            >
-        </div>
-        <div class="form-group">
-            <label for="power">Power (HP)</label>
-            <input 
-                id="power" 
-                type="text" 
-                class="form-control" 
-                [(ngModel)]="model.power"
-                required 
-                name="power"
             >
         </div>
         <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
             Submit
         </button>
-        <br />
-        <a class="btn btn-primary btn-sm" routerLink="/cars">Back to List</a>
     </form>
     <hr />
 </div>
