@@ -7,6 +7,7 @@ import { Routes } from '@angular/router';
 //import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
 //Components
+import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
 import { ProjectTrackerComponent } from './project-tracker.component';
 //import { CarService } from './car.service';
@@ -23,6 +24,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
     ],
     declarations: [
         ProjectListComponent,
+        ProjectEditComponent,
         ProjectTrackerComponent
         //CarDetailComponent,
         //CarFormComponent,
