@@ -9,16 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var project_1 = require('./project');
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent() {
+    function ProjectEditComponent(
+        //private carService: CarService,
+        route, router) {
+        this.route = route;
+        this.router = router;
         this.model = new project_1.Project(0, '', '');
         this.submitted = false;
         this.fuelTypes = [
-            'Petrol',
-            'Diesel',
-            'Hybrid',
-            'Electric'
+            '.NET Technology',
+            'MS Access FrontEnd + MS SQL Server Backend',
+            'MS Access FrontEnd + Backend'
         ];
         this.bodyStyle = [
             'Convertibles',
@@ -37,10 +41,11 @@ var ProjectEditComponent = (function () {
         //.subscribe(car => this.model = car);
     };
     ProjectEditComponent.prototype.onSubmit = function () {
+        var _this = this;
         this.submitted = true;
         //this.carService.putCar(this.model);
         setTimeout(function () {
-            //this.router.navigate(['/cars'])
+            _this.router.navigate(['/project-list']);
         }, 2000);
     };
     ProjectEditComponent = __decorate([
@@ -49,7 +54,7 @@ var ProjectEditComponent = (function () {
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());

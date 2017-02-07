@@ -13,10 +13,9 @@ export class ProjectEditComponent implements OnInit{
     model = new Project(0, '', '');
     submitted = false;
     fuelTypes = [
-        'Petrol',
-        'Diesel',
-        'Hybrid',
-        'Electric' 
+        '.NET Technology',
+        'MS Access FrontEnd + MS SQL Server Backend',
+        'MS Access FrontEnd + Backend'
     ];
     bodyStyle = [
         'Convertibles',
@@ -31,8 +30,8 @@ export class ProjectEditComponent implements OnInit{
 
     constructor(
         //private carService: CarService,
-        //private route: ActivatedRoute,
-        //private router: Router
+        private route: ActivatedRoute,
+        private router: Router
     ){}
 
     ngOnInit(): void {
@@ -47,7 +46,7 @@ export class ProjectEditComponent implements OnInit{
 
         setTimeout(
             () => {
-                //this.router.navigate(['/cars'])
+                this.router.navigate(['/project-list'])
             }, 
             2000
         );
