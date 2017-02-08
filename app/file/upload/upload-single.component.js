@@ -17,7 +17,7 @@ var UploadSingleComponent = (function () {
             moduleId: module.id,
             templateUrl: 'upload-single.component.html',
             selector: 'upload-single',
-            inputs: ['uploads']
+            inputs: ['fromUploader']
         }), 
         __metadata('design:paramtypes', [])
     ], UploadSingleComponent);

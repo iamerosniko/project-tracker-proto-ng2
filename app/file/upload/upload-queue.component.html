@@ -1,11 +1,11 @@
 <div class="col-md-8">
 	
-	Queue length: {{ uploads2?.queue?.length }}
+	Queue length: {{ fromUploader?.queue?.length }}
 	
     <div>
 		Queue progress:
 		<div class="progress" style="">
-			<div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploads2.progress + '%' }"></div>
+			<div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': fromUploader.progress + '%' }"></div>
 		</div>
 	</div>			
 	<table class="table">
@@ -19,7 +19,7 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr *ngFor="let item of uploads2.queue">
+		<tr *ngFor="let item of fromUploader.queue">
 			<td><strong>{{ item.file.name }}</strong></td>
 			<td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
 			<td>
@@ -54,15 +54,15 @@
 	<div>
 		
 		<button type="button" class="btn btn-success btn-s"
-				(click)="uploads2.uploadAll()" [disabled]="!uploads2.getNotUploadedItems().length">
+				(click)="fromUploader.uploadAll()" [disabled]="!fromUploader.getNotUploadedItems().length">
 			<span class="glyphicon glyphicon-upload"></span> Upload all
 		</button>
 		<button type="button" class="btn btn-warning btn-s"
-				(click)="uploads2.cancelAll()" [disabled]="!uploads2.isUploading">
+				(click)="fromUploader.cancelAll()" [disabled]="!fromUploader.isUploading">
 			<span class="glyphicon glyphicon-ban-circle"></span> Cancel all
 		</button>
 		<button type="button" class="btn btn-danger btn-s"
-				(click)="uploads2.clearQueue()" [disabled]="!uploads2.queue.length">
+				(click)="fromUploader.clearQueue()" [disabled]="!fromUploader.queue.length">
 			<span class="glyphicon glyphicon-trash"></span> Remove all
 		</button>
 	</div>

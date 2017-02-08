@@ -17,7 +17,7 @@ var UploadMultipleComponent = (function () {
             moduleId: module.id,
             templateUrl: 'upload-multiple.component.html',
             selector: 'upload-multiple',
-            inputs: ['uploads']
+            inputs: ['fromUploader']
         }), 
         __metadata('design:paramtypes', [])
     ], UploadMultipleComponent);

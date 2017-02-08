@@ -5,7 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
     moduleId: module.id,
     templateUrl : 'upload-single.component.html',
     selector: 'upload-single',
-    inputs: ['uploads'] 
+    inputs: ['fromUploader'] 
    
 })
 export class UploadSingleComponent {}

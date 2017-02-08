@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-md-4">
             <form>
-                <upload-multiple [uploads]="uploader"></upload-multiple>   
-                <upload-single [uploads]="uploader" ></upload-single>      
+                <upload-multiple [fromUploader]="uploader"></upload-multiple>   
+                <upload-single [fromUploader]="uploader" ></upload-single>      
             </form>
         </div>
-        <upload-queue [uploads2]="uploader"></upload-queue>
+        <upload-queue [fromUploader]="uploader"></upload-queue>
         
     </div>
 </div>
