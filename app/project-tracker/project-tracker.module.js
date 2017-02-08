@@ -19,7 +19,7 @@ var http_1 = require('@angular/http');
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
 var project_tracker_component_1 = require('./project-tracker.component');
-//import { CarService } from './car.service';
+var project_service_1 = require('./projects/project.service');
 var project_tracker_routing_1 = require('./project-tracker.routing');
 var ProjectTrackerModule = (function () {
     function ProjectTrackerModule() {
@@ -38,7 +38,10 @@ var ProjectTrackerModule = (function () {
                 project_edit_component_1.ProjectEditComponent,
                 project_tracker_component_1.ProjectTrackerComponent
             ],
-            providers: []
+            providers: [
+                //CarService
+                project_service_1.ProjectService
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], ProjectTrackerModule);

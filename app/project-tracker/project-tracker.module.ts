@@ -10,7 +10,9 @@ import { Routes } from '@angular/router';
 import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
 import { ProjectTrackerComponent } from './project-tracker.component';
-//import { CarService } from './car.service';
+
+
+import { ProjectService } from './projects/project.service';
 
 import { ProjectTrackerRouting } from './project-tracker.routing';
 
@@ -33,6 +35,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
     ],
     providers: [
         //CarService
+        ProjectService
     ]
 })
 
