@@ -48,25 +48,25 @@
             Description is required! Please fill in a value.
         </div>
         <div class="form-group">
-            <label for="fuelType">Technology</label>
+            <label for="technology">Technology</label>
             <select 
-                id="fuelType" 
+                id="technology" 
                 class="form-control"
-                [(ngModel)]="model.fuelType"
+                [(ngModel)]="model.technology"
                 required 
-                name="fuelType"
+                name="technology"
             >
-                <option *ngFor="let ft of fuelTypes" [value]="ft">{{ft}}</option>
+                <option *ngFor="let ft of technology" [value]="ft">{{ft}}</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="bodyStyle">Owner</label>
+            <label for="owner">Owner</label>
             <input 
-                id="bodyStyle" 
+                id="owner" 
                 class="form-control"
-                [(ngModel)]="model.bodyStyle"
+                [(ngModel)]="model.owner"
                 required
-                name="bodyStyle"
+                name="owner"
             >
         </div>
         <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">

@@ -7,7 +7,7 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 //import { DownloadMemoryService }  from './download-memory.service';
 //import { InMemoryDataService }  from '../cars/in-memory-data.service';
 
-import { UploadComponent } from './upload.component';
+import { UploadComponent } from './upload/upload.component';
 import { DownloadComponent } from './download.component';
 
 

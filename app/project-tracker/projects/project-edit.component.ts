@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 
 import { Project } from  './project';
+import { ProjectService } from './project.service';
 
 @Component({
     moduleId: module.id,
@@ -12,37 +13,27 @@ import { Project } from  './project';
 export class ProjectEditComponent implements OnInit{
     model = new Project(0, '', '');
     submitted = false;
-    fuelTypes = [
+    technology = [
         '.NET Technology',
         'MS Access FrontEnd + MS SQL Server Backend',
         'MS Access FrontEnd + Backend'
     ];
-    bodyStyle = [
-        'Convertibles',
-        'Coupes',
-        'Hatchbacks',
-        'Vans',
-        'Sedans',
-        'Suvs',
-        'Trucks',
-        'Wagons'
-    ];
 
     constructor(
-        //private carService: CarService,
+        private projectService: ProjectService,
         private route: ActivatedRoute,
         private router: Router
     ){}
 
     ngOnInit(): void {
-        //this.route.params
-            //.switchMap((params: Params) => this.carService.getCar(+params['id'])) //the + value will convert id to number type
-            //.subscribe(car => this.model = car);
+        this.route.params
+            .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
+            .subscribe(project => this.model = project);
     }
 
     onSubmit(): void {
         this.submitted = true;
-        //this.carService.putCar(this.model);
+        this.projectService.putProject(this.model);
 
         setTimeout(
             () => {

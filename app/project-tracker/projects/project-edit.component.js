@@ -11,39 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var project_1 = require('./project');
+var project_service_1 = require('./project.service');
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent(
-        //private carService: CarService,
-        route, router) {
+    function ProjectEditComponent(projectService, route, router) {
+        this.projectService = projectService;
         this.route = route;
         this.router = router;
         this.model = new project_1.Project(0, '', '');
         this.submitted = false;
-        this.fuelTypes = [
+        this.technology = [
             '.NET Technology',
             'MS Access FrontEnd + MS SQL Server Backend',
             'MS Access FrontEnd + Backend'
         ];
-        this.bodyStyle = [
-            'Convertibles',
-            'Coupes',
-            'Hatchbacks',
-            'Vans',
-            'Sedans',
-            'Suvs',
-            'Trucks',
-            'Wagons'
-        ];
     }
     ProjectEditComponent.prototype.ngOnInit = function () {
-        //this.route.params
-        //.switchMap((params: Params) => this.carService.getCar(+params['id'])) //the + value will convert id to number type
-        //.subscribe(car => this.model = car);
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.projectService.getProject(+params['id']); }) //the + value will convert id to number type
+            .subscribe(function (project) { return _this.model = project; });
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        //this.carService.putCar(this.model);
+        this.projectService.putProject(this.model);
         setTimeout(function () {
             _this.router.navigate(['/project-list']);
         }, 2000);
@@ -54,7 +45,7 @@ var ProjectEditComponent = (function () {
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());
