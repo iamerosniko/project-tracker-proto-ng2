@@ -10,21 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var about_component_1 = require('./about.component');
-var appRoutes = [
-    { path: 'about', component: about_component_1.AboutComponent },
-    { path: '', redirectTo: 'upload', pathMatch: 'full' }
+var upload_component_1 = require('./upload/upload.component');
+var download_component_1 = require('./download.component');
+var fileRoutes = [
+    { path: 'upload', component: upload_component_1.UploadComponent },
+    { path: 'download', component: download_component_1.DownloadComponent },
 ];
-var AppRouting = (function () {
-    function AppRouting() {
+var FileRouting = (function () {
+    function FileRouting() {
     }
-    AppRouting = __decorate([
+    FileRouting = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
+            imports: [router_1.RouterModule.forChild(fileRoutes)],
             exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRouting);
-    return AppRouting;
+    ], FileRouting);
+    return FileRouting;
 }());
-exports.AppRouting = AppRouting;
+exports.FileRouting = FileRouting;

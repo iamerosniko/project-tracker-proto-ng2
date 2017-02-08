@@ -1,0 +1,13 @@
+<h3>File Upload</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <upload-multiple [uploads]="uploader"></upload-multiple>   
+                <upload-single [uploads]="uploader" ></upload-single>      
+            </form>
+        </div>
+        <upload-queue [uploads2]="uploader"></upload-queue>
+        
+    </div>
+</div>
