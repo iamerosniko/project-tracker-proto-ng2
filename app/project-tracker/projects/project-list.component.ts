@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { ProjectService } from './project.service';
+import { Project } from './project'
+
 @Component({
     moduleId: module.id,
     templateUrl: 'project-list.component.html',
@@ -8,22 +11,22 @@ import { Router } from '@angular/router';
 })
 
 export class ProjectListComponent implements OnInit{
-    //cars: Car[];
+    project: Project[];
 
     constructor(
         private router: Router,
-        //private carService: CarService
+        private projectService: ProjectService
     ) {}
 
-    getCars(): void {
-        //this.carService.getCars().then(cars => this.cars = cars);
+    getProjects(): void {
+        this.projectService.getProjects().then(project => this.project = project);
     }
 
     ngOnInit(): void {
-        //this.getCars();
+        this.getProjects();
     }
 
-    //onSelect(car: Car) {
-        //this.router.navigate(['/car', car.id]);
-    //}
+    onSelect(project: Project) {
+        this.router.navigate(['/project', project.id]);
+    }
 }

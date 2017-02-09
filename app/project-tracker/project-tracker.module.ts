@@ -10,9 +10,11 @@ import { Routes } from '@angular/router';
 import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
 import { ProjectTrackerComponent } from './project-tracker.component';
-
-
+//service
 import { ProjectService } from './projects/project.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProjectDataService }  from './projects/project-data.service';
+
 
 import { ProjectTrackerRouting } from './project-tracker.routing';
 
@@ -21,7 +23,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         CommonModule,
         FormsModule,
         HttpModule,
-        //InMemoryWebApiModule.forRoot(InMemoryDataService),
+        InMemoryWebApiModule.forRoot(ProjectDataService),
         ProjectTrackerRouting
     ],
     declarations: [

@@ -26,10 +26,9 @@ var ProjectEditComponent = (function () {
         ];
     }
     ProjectEditComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.projectService.getProject(+params['id']); }) //the + value will convert id to number type
-            .subscribe(function (project) { return _this.model = project; });
+        //this.route.params
+        //.switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
+        //.subscribe(project => this.model = project);
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
