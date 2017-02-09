@@ -11,7 +11,7 @@ import { Project } from './project'
 })
 
 export class ProjectListComponent implements OnInit{
-    project: Project[];
+    projects: Project[];
 
     constructor(
         private router: Router,
@@ -19,7 +19,7 @@ export class ProjectListComponent implements OnInit{
     ) {}
 
     getProjects(): void {
-        this.projectService.getProjects().then(project => this.project = project);
+        this.projectService.getProjects().then(project => this.projects = project);
     }
 
     ngOnInit(): void {

@@ -18,6 +18,5 @@ export class ProjectDataService implements InMemoryDbService {
         }
     ];
     return {projects};
-
   }
 }

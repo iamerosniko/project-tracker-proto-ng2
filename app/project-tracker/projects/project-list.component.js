@@ -10,16 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var project_service_1 = require('./project.service');
 var ProjectListComponent = (function () {
-    //cars: Car[];
-    function ProjectListComponent(router) {
+    function ProjectListComponent(router, projectService) {
         this.router = router;
+        this.projectService = projectService;
     }
-    ProjectListComponent.prototype.getCars = function () {
-        //this.carService.getCars().then(cars => this.cars = cars);
+    ProjectListComponent.prototype.getProjects = function () {
+        var _this = this;
+        this.projectService.getProjects().then(function (project) { return _this.projects = project; });
     };
     ProjectListComponent.prototype.ngOnInit = function () {
-        //this.getCars();
+        this.getProjects();
+    };
+    ProjectListComponent.prototype.onSelect = function (project) {
+        this.router.navigate(['/project', project.id]);
     };
     ProjectListComponent = __decorate([
         core_1.Component({
@@ -27,7 +32,7 @@ var ProjectListComponent = (function () {
             templateUrl: 'project-list.component.html',
             selector: 'project-list'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
     ], ProjectListComponent);
     return ProjectListComponent;
 }());
