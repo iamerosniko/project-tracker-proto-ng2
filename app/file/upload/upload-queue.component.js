@@ -17,7 +17,7 @@ var UploadQueueComponent = (function () {
             moduleId: module.id,
             templateUrl: 'upload-queue.component.html',
             selector: 'upload-queue',
-            inputs: ['fromUploader']
+            inputs: ['fromUploader', 'ex']
         }), 
         __metadata('design:paramtypes', [])
     ], UploadQueueComponent);

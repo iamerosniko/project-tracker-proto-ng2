@@ -7,9 +7,6 @@ import { ProjectTrackerComponent } from './project-tracker.component';
 const projectTrackerRoutes: Routes = [
     //paths
     { path : 'project-tracker', component: ProjectTrackerComponent },
-    //projects folder
-    { path : 'project-list', component : ProjectListComponent },
-    { path : 'project-edit', component : ProjectEditComponent }
 ];
 
  @NgModule ({

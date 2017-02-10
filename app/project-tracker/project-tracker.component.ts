@@ -2,16 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    template:`
-    <div class="panel-body">
-        
-        <a class="btn btn-primary btn-sm" routerLink="/project-edit">New Project</a>
-        
-        
-        <router-outlet></router-outlet>
-        <project-list></project-list>
-    </div>
-    `
+    templateUrl:`project-tracker.component.html`
 })
 
-export class ProjectTrackerComponent{}
+export class ProjectTrackerComponent{
+    formView : number=0;
+
+}

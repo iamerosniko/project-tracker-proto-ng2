@@ -24,7 +24,7 @@ var ProjectListComponent = (function () {
         this.getProjects();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
-        this.router.navigate(['/project', project.id]);
+        this.router.navigate(['/projects', project.id]);
     };
     ProjectListComponent = __decorate([
         core_1.Component({

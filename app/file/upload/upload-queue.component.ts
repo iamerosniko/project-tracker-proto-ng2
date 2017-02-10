@@ -5,7 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
     moduleId: module.id,
     templateUrl : 'upload-queue.component.html',
     selector: 'upload-queue',
-    inputs: ['fromUploader']
+    inputs: ['fromUploader','ex']
 })
 export class UploadQueueComponent {
 

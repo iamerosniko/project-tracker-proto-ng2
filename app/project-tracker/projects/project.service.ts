@@ -8,10 +8,10 @@ import { Project } from './project';
 export class ProjectService {
     private headers = new Headers({'Content-Type': 'application/json'});
     private projectsUrl = 'api/projects';  // testing
-    //private carsUrl = 'http://localhost:3000/api/ng2_cars';;  // live
+    //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
 
     constructor(private http: Http){}
-
+    
     postProject(newProject: Project): Promise<Project> {
         return this.http
             .post(this.projectsUrl, JSON.stringify(newProject), {headers: this.headers})

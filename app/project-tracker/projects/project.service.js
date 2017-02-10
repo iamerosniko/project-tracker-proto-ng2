@@ -12,7 +12,7 @@ require('rxjs/add/operator/toPromise');
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var ProjectService = (function () {
-    //private carsUrl = 'http://localhost:3000/api/ng2_cars';;  // live
+    //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
     function ProjectService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });

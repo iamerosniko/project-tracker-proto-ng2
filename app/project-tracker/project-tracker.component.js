@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ProjectTrackerComponent = (function () {
     function ProjectTrackerComponent() {
+        this.formView = 0;
     }
     ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            template: "\n    <div class=\"panel-body\">\n        \n        <a class=\"btn btn-primary btn-sm\" routerLink=\"/project-edit\">New Project</a>\n        \n        \n        <router-outlet></router-outlet>\n        <project-list></project-list>\n    </div>\n    "
+            templateUrl: "project-tracker.component.html"
         }), 
         __metadata('design:paramtypes', [])
     ], ProjectTrackerComponent);
