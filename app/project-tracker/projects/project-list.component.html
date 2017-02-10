@@ -1,4 +1,4 @@
-<div [hidden]="!this.listViewVisible==0">
+<div>
     <h3>Project List Component</h3>
     <table class="table table-hover">
         <thead>
@@ -19,12 +19,12 @@
                 <td>{{project.technology}}</td>
                 <td>{{project.owner}}</td>
                 <td>
-                    <a role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-edit" (click)="onSelect(project)"></i>
+                    <a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-edit" ></i>
                     </a>
                
-                    <a role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-                        <i class="glyphicon glyphicon-trash"></i>
+                    <a (click)="editProject()" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-trash" ></i>
                     </a>
                 </td>
             </tr>

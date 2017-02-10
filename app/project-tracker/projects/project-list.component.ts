@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ProjectService } from './project.service';
+import { ProjectEditComponent } from './project-edit.component';
 import { Project } from './project'
 
 @Component({
@@ -12,7 +13,7 @@ import { Project } from './project'
 
 export class ProjectListComponent implements OnInit{
     projects: Project[];
-    listViewVisible=0;
+
     constructor(
         private router: Router,
         private projectService: ProjectService
@@ -29,6 +30,4 @@ export class ProjectListComponent implements OnInit{
     onSelect(project: Project) {
         this.router.navigate(['/projects', project.id]);
     }
-
-    
 }

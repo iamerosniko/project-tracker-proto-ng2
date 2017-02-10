@@ -25,9 +25,6 @@ var ProjectEditComponent = (function () {
             'MS Access FrontEnd + Backend'
         ];
     }
-    ProjectEditComponent.prototype.backToList = function () {
-        this.mainform.formView = 0;
-    };
     ProjectEditComponent.prototype.ngOnInit = function () {
         //this.route.params
         //  .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
@@ -45,8 +42,7 @@ var ProjectEditComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'project-edit.component.html',
-            selector: 'project-edit',
-            inputs: ['mainform']
+            selector: 'project-edit'
         }), 
         __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
     ], ProjectEditComponent);

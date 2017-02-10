@@ -15,7 +15,6 @@ var ProjectListComponent = (function () {
     function ProjectListComponent(router, projectService) {
         this.router = router;
         this.projectService = projectService;
-        this.listViewVisible = 0;
     }
     ProjectListComponent.prototype.getProjects = function () {
         var _this = this;

@@ -7,12 +7,10 @@ import { ProjectService } from './project.service';
 @Component({
     moduleId: module.id,
     templateUrl: 'project-edit.component.html',
-    selector: 'project-edit',
-    inputs: ['mainform']
+    selector: 'project-edit'
 })
 
 export class ProjectEditComponent implements OnInit{
-    
     model = new Project(0, '', '');
     submitted = false;
     technology = [
@@ -28,12 +26,7 @@ export class ProjectEditComponent implements OnInit{
         private router: Router
     ){}
     
-    backToList(){
-        this.mainform.formView=0;
-    }
-
     ngOnInit(): void {
-        
         //this.route.params
           //  .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
           //  .subscribe(project => this.model = project);
