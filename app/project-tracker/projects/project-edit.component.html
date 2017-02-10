@@ -1,5 +1,6 @@
 <div class="panel-body">
-    <a class="btn btn-primary btn-sm" routerLink="/project-tracker">Back to List</a>
+    <a class="btn btn-primary btn-sm" (click)='backToList()' >Back to List</a>
+    
     <hr />
         <div [hidden]="!submitted">
             <h3>Form successfully submitted!</h3>

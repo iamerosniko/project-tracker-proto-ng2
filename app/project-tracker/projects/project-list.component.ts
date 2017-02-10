@@ -12,7 +12,7 @@ import { Project } from './project'
 
 export class ProjectListComponent implements OnInit{
     projects: Project[];
-
+    listViewVisible=0;
     constructor(
         private router: Router,
         private projectService: ProjectService
