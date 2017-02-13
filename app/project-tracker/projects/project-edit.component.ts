@@ -35,7 +35,7 @@ export class ProjectEditComponent implements OnInit{
 
     onSubmit(): void {
         this.submitted = true;
-        this.projectService.postProject(this.model);
+        this.projectService.putProject(this.model);
 
         setTimeout(
             () => {
