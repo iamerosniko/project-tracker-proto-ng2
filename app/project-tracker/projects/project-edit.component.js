@@ -34,7 +34,7 @@ var ProjectEditComponent = (function () {
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        this.projectService.postProject(this.model);
+        this.projectService.putProject(this.model);
         setTimeout(function () {
             _this.router.navigate(['/project-tracker']);
         }, 2000);
