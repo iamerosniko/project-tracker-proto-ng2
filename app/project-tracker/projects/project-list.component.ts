@@ -27,6 +27,11 @@ export class ProjectListComponent implements OnInit{
         this.getProjects();
     }
 
+    deleteProject(projectid: number){
+        this.projectService.deleteProject(projectid)
+        this.getProjects();
+    }
+
     onSelect(project: Project) {
         this.router.navigate(['/projects', project.id]);
     }

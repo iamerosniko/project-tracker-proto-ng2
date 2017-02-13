@@ -27,19 +27,19 @@ export class ProjectEditComponent implements OnInit{
     ){}
     
     ngOnInit(): void {
-        //this.route.params
-          //  .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
-          //  .subscribe(project => this.model = project);
+        this.route.params
+            .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
+            .subscribe(project => this.model = project);
   
     }
 
     onSubmit(): void {
         this.submitted = true;
-        this.projectService.putProject(this.model);
+        this.projectService.postProject(this.model);
 
         setTimeout(
             () => {
-                this.router.navigate(['/project-list'])
+                this.router.navigate(['/project-tracker'])
             }, 
             2000
         );

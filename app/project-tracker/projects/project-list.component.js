@@ -23,6 +23,10 @@ var ProjectListComponent = (function () {
     ProjectListComponent.prototype.ngOnInit = function () {
         this.getProjects();
     };
+    ProjectListComponent.prototype.deleteProject = function (projectid) {
+        this.projectService.deleteProject(projectid);
+        this.getProjects();
+    };
     ProjectListComponent.prototype.onSelect = function (project) {
         this.router.navigate(['/projects', project.id]);
     };

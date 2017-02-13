@@ -5,7 +5,7 @@ import { AboutComponent } from './about.component';
 
 const appRoutes: Routes = [
     { path: 'about', component: AboutComponent},
-    { path: '', redirectTo: 'upload', pathMatch: 'full' }
+    { path: '', redirectTo: 'project-tracker', pathMatch: 'full' }
 ];
 
 @NgModule ({

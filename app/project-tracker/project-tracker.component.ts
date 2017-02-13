@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
 })
 
 export class ProjectTrackerComponent{
-    formView : number=0;
 }

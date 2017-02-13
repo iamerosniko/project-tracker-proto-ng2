@@ -22,7 +22,7 @@ var ProjectService = (function () {
         return this.http
             .post(this.projectsUrl, JSON.stringify(newProject), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; }) // testing
+            .then(function (res) { return res.json(); }) // testing
             .catch(this.handleError);
     };
     ProjectService.prototype.getProjects = function () {
