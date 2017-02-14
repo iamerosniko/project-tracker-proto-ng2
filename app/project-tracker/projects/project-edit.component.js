@@ -10,14 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var project_1 = require('./project');
 var project_service_1 = require('./project.service');
 var ProjectEditComponent = (function () {
     function ProjectEditComponent(projectService, route, router) {
         this.projectService = projectService;
         this.route = route;
         this.router = router;
-        this.model = new project_1.Project(0, '', '');
+        this.isNew = false;
         this.submitted = false;
         this.technology = [
             '.NET Technology',
@@ -25,16 +24,10 @@ var ProjectEditComponent = (function () {
             'MS Access FrontEnd + Backend'
         ];
     }
-    ProjectEditComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.projectService.getProject(+params['id']); }) //the + value will convert id to number type
-            .subscribe(function (project) { return _this.model = project; });
+    ProjectEditComponent.prototype.refreshList = function () {
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.submitted = true;
-        this.projectService.putProject(this.model);
         setTimeout(function () {
             _this.router.navigate(['/project-tracker']);
         }, 2000);

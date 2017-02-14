@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 
 import { Project } from  './project';
@@ -10,9 +10,10 @@ import { ProjectService } from './project.service';
     selector: 'project-edit'
 })
 
-export class ProjectEditComponent implements OnInit{
-    model = new Project(0, '', '');
+export class ProjectEditComponent{
+    isNew : boolean = false;
     submitted = false;
+
     technology = [
         '.NET Technology',
         'MS Access FrontEnd + MS SQL Server Backend',
@@ -24,19 +25,16 @@ export class ProjectEditComponent implements OnInit{
         private projectService: ProjectService,
         private route: ActivatedRoute,
         private router: Router
-    ){}
+    ){
+        
+    }
     
-    ngOnInit(): void {
-        this.route.params
-            .switchMap((params: Params) => this.projectService.getProject(+params['id'])) //the + value will convert id to number type
-            .subscribe(project => this.model = project);
-  
+    refreshList(): void{
+        
     }
 
     onSubmit(): void {
-        this.submitted = true;
-        this.projectService.putProject(this.model);
-
+        
         setTimeout(
             () => {
                 this.router.navigate(['/project-tracker'])

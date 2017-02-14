@@ -18,7 +18,7 @@ var http_1 = require('@angular/http');
 //Components
 var project_edit_component_1 = require('./projects/project-edit.component');
 var project_list_component_1 = require('./projects/project-list.component');
-var project_tracker_component_1 = require('./project-tracker.component');
+var project_tracker_component_1 = require('./projects/project-tracker.component');
 //service
 var project_service_1 = require('./projects/project.service');
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
@@ -42,7 +42,6 @@ var ProjectTrackerModule = (function () {
                 project_tracker_component_1.ProjectTrackerComponent
             ],
             providers: [
-                //CarService
                 project_service_1.ProjectService
             ]
         }), 

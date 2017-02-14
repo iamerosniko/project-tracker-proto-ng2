@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import  { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { ProjectTrackerComponent } from './project-tracker.component';
 import { ProjectService } from './project.service';
 import { ProjectEditComponent } from './project-edit.component';
 import { Project } from './project'
@@ -12,15 +13,19 @@ import { Project } from './project'
 })
 
 export class ProjectListComponent implements OnInit{
-    projects: Project[];
-
+    projectList : Project[];
+    @Input() mainProject:ProjectTrackerComponent;
     constructor(
-        private router: Router,
-        private projectService: ProjectService
+        //private router: Router,
+        private projectService:ProjectService,
+        
     ) {}
 
     getProjects(): void {
-        this.projectService.getProjects().then(project => this.projects = project);
+        this.projectService.getProjects().then(project => this.mainProject.projectList=project );
+    }
+
+    newProject(): void {
     }
 
     ngOnInit(): void {
@@ -33,6 +38,6 @@ export class ProjectListComponent implements OnInit{
     }
 
     onSelect(project: Project) {
-        this.router.navigate(['/projects', project.id]);
+        this.mainProject.viewpage=1;
     }
 }

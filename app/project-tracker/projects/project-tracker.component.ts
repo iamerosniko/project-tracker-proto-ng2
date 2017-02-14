@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Project } from './project';
+import { ProjectService } from './project.service';
 
 @Component({
     moduleId: module.id,
@@ -6,4 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class ProjectTrackerComponent{
+    projectList : Project[];
+    viewpage : number = 0;
 }

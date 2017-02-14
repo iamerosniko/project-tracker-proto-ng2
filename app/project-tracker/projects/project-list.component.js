@@ -9,16 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var project_tracker_component_1 = require('./project-tracker.component');
 var project_service_1 = require('./project.service');
 var ProjectListComponent = (function () {
-    function ProjectListComponent(router, projectService) {
-        this.router = router;
+    function ProjectListComponent(
+        //private router: Router,
+        projectService) {
         this.projectService = projectService;
     }
     ProjectListComponent.prototype.getProjects = function () {
         var _this = this;
-        this.projectService.getProjects().then(function (project) { return _this.projects = project; });
+        this.projectService.getProjects().then(function (project) { return _this.mainProject.projectList = project; });
+    };
+    ProjectListComponent.prototype.newProject = function () {
     };
     ProjectListComponent.prototype.ngOnInit = function () {
         this.getProjects();
@@ -28,15 +31,19 @@ var ProjectListComponent = (function () {
         this.getProjects();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
-        this.router.navigate(['/projects', project.id]);
+        this.mainProject.viewpage = 1;
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', project_tracker_component_1.ProjectTrackerComponent)
+    ], ProjectListComponent.prototype, "mainProject", void 0);
     ProjectListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'project-list.component.html',
             selector: 'project-list'
         }), 
-        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+        __metadata('design:paramtypes', [project_service_1.ProjectService])
     ], ProjectListComponent);
     return ProjectListComponent;
 }());

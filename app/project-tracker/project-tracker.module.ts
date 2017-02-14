@@ -9,7 +9,7 @@ import { Routes } from '@angular/router';
 //Components
 import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
-import { ProjectTrackerComponent } from './project-tracker.component';
+import { ProjectTrackerComponent } from './projects/project-tracker.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -30,13 +30,8 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         ProjectListComponent,
         ProjectEditComponent,
         ProjectTrackerComponent
-        //CarDetailComponent,
-        //CarFormComponent,
-        //CarsListComponent,
-        //CarEditComponent
     ],
     providers: [
-        //CarService
         ProjectService
     ]
 })
