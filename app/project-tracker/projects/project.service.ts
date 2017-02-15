@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-
+import { UUID } from 'angular2-uuid';
 import { Project } from './project';
 
 @Injectable()
@@ -51,7 +51,7 @@ export class ProjectService {
                 .catch(this.handleError);
     }
 
-    deleteProject(id: number): Promise<void> {
+    deleteProject(id: UUID): Promise<void> {
         const url = `${this.projectsUrl}/${id}`;
 
         return this.http.delete(url, {headers: this.headers})

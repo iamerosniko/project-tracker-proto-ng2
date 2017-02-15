@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var project_1 = require('./project');
 var project_service_1 = require('./project.service');
+var angular2_uuid_1 = require('angular2-uuid');
 var ProjectTrackerComponent = (function () {
     function ProjectTrackerComponent(projectService) {
         this.projectService = projectService;
@@ -23,12 +24,15 @@ var ProjectTrackerComponent = (function () {
         this.projectService.getProjects().then(function (project) { return _this.projectList = project; });
     };
     ProjectTrackerComponent.prototype.newRecord = function () {
-        this.selectedProject = new project_1.Project(0, '', '', '', '');
+        this.selectedProject = new project_1.Project(angular2_uuid_1.UUID.UUID(), '', '', '', '');
         this.isNew = true;
         this.viewpage = 1;
     };
     ProjectTrackerComponent.prototype.saveRecord = function () {
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
+    };
+    ProjectTrackerComponent.prototype.deleteRecord = function (id) {
+        this.projectService.deleteProject(id);
     };
     ProjectTrackerComponent.prototype.ngOnInit = function () {
         this.refreshList();

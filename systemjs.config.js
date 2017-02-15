@@ -28,6 +28,7 @@
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'file-saver':'npm:file-saver/file-saver.min.js',
       'ng2-file-upload' : 'npm:ng2-file-upload',
+      'angular2-uuid': 'npm:angular2-uuid/index.js',
       //express  
       'express' : 'npm:express'
     },

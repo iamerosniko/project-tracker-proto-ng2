@@ -1,6 +1,6 @@
 import  { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { UUID } from 'angular2-uuid';
 import { ProjectTrackerComponent } from './project-tracker.component';
 import { ProjectService } from './project.service';
 import { ProjectEditComponent } from './project-edit.component';
@@ -19,7 +19,7 @@ export class ProjectListComponent{
         this.mainProject.newRecord();
     }
 
-    deleteProject(projectid: number){
+    deleteProject(projectid: UUID){
         this.mainProject.deleteRecord(projectid);
         this.mainProject.refreshList();
     }

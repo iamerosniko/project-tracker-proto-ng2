@@ -17,7 +17,7 @@ var ProjectListComponent = (function () {
         this.mainProject.newRecord();
     };
     ProjectListComponent.prototype.deleteProject = function (projectid) {
-        this.mainProject.projectService.deleteProject(projectid);
+        this.mainProject.deleteRecord(projectid);
         this.mainProject.refreshList();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
