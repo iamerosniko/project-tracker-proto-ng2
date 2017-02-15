@@ -10,10 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var project_service_1 = require('./project.service');
+var project_tracker_component_1 = require('./project-tracker.component');
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent(projectService, route, router) {
-        this.projectService = projectService;
+    function ProjectEditComponent(route, router) {
         this.route = route;
         this.router = router;
         this.isNew = false;
@@ -24,6 +23,8 @@ var ProjectEditComponent = (function () {
             'MS Access FrontEnd + Backend'
         ];
     }
+    ProjectEditComponent.prototype.backtoList = function () {
+    };
     ProjectEditComponent.prototype.refreshList = function () {
     };
     ProjectEditComponent.prototype.onSubmit = function () {
@@ -32,13 +33,22 @@ var ProjectEditComponent = (function () {
             _this.router.navigate(['/project-tracker']);
         }, 2000);
     };
+    Object.defineProperty(ProjectEditComponent.prototype, "diagnostic", {
+        get: function () { return JSON.stringify(this.mainProject.selectedProject); },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', project_tracker_component_1.ProjectTrackerComponent)
+    ], ProjectEditComponent.prototype, "mainProject", void 0);
     ProjectEditComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());

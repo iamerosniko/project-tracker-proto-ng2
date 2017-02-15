@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 
-import { Project } from  './project';
-import { ProjectService } from './project.service';
+import { ProjectTrackerComponent } from './project-tracker.component'
 
 @Component({
     moduleId: module.id,
@@ -11,6 +10,7 @@ import { ProjectService } from './project.service';
 })
 
 export class ProjectEditComponent{
+    @Input() mainProject:ProjectTrackerComponent;
     isNew : boolean = false;
     submitted = false;
 
@@ -22,13 +22,16 @@ export class ProjectEditComponent{
     
 
     constructor(
-        private projectService: ProjectService,
         private route: ActivatedRoute,
         private router: Router
     ){
         
     }
     
+    backtoList(): void {
+
+    }
+
     refreshList(): void{
         
     }
@@ -42,4 +45,5 @@ export class ProjectEditComponent{
             2000
         );
     }
+    get diagnostic() { return JSON.stringify(this.mainProject.selectedProject); }
 }

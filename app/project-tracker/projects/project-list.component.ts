@@ -15,14 +15,9 @@ import { Project } from './project'
 export class ProjectListComponent implements OnInit{
     projectList : Project[];
     @Input() mainProject:ProjectTrackerComponent;
-    constructor(
-        //private router: Router,
-        private projectService:ProjectService,
-        
-    ) {}
 
     getProjects(): void {
-        this.projectService.getProjects().then(project => this.mainProject.projectList=project );
+        this.mainProject.projectService.getProjects().then(project => this.mainProject.projectList = project );
     }
 
     newProject(): void {
@@ -33,11 +28,12 @@ export class ProjectListComponent implements OnInit{
     }
 
     deleteProject(projectid: number){
-        this.projectService.deleteProject(projectid)
+        this.mainProject.projectService.deleteProject(projectid)
         this.getProjects();
     }
 
     onSelect(project: Project) {
         this.mainProject.viewpage=1;
+        this.mainProject.selectedProject=project;
     }
 }

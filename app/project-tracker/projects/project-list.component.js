@@ -10,16 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var project_tracker_component_1 = require('./project-tracker.component');
-var project_service_1 = require('./project.service');
 var ProjectListComponent = (function () {
-    function ProjectListComponent(
-        //private router: Router,
-        projectService) {
-        this.projectService = projectService;
+    function ProjectListComponent() {
     }
     ProjectListComponent.prototype.getProjects = function () {
         var _this = this;
-        this.projectService.getProjects().then(function (project) { return _this.mainProject.projectList = project; });
+        this.mainProject.projectService.getProjects().then(function (project) { return _this.mainProject.projectList = project; });
     };
     ProjectListComponent.prototype.newProject = function () {
     };
@@ -27,11 +23,12 @@ var ProjectListComponent = (function () {
         this.getProjects();
     };
     ProjectListComponent.prototype.deleteProject = function (projectid) {
-        this.projectService.deleteProject(projectid);
+        this.mainProject.projectService.deleteProject(projectid);
         this.getProjects();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
         this.mainProject.viewpage = 1;
+        this.mainProject.selectedProject = project;
     };
     __decorate([
         core_1.Input(), 
@@ -43,7 +40,7 @@ var ProjectListComponent = (function () {
             templateUrl: 'project-list.component.html',
             selector: 'project-list'
         }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService])
+        __metadata('design:paramtypes', [])
     ], ProjectListComponent);
     return ProjectListComponent;
 }());

@@ -10,4 +10,8 @@ import { ProjectService } from './project.service';
 export class ProjectTrackerComponent{
     projectList : Project[];
     viewpage : number = 0;
+    selectedProject : Project = new Project(0,'','','','');
+    constructor(
+        public projectService: ProjectService
+    ){ }
 }

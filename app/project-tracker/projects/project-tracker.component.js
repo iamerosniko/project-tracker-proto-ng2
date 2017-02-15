@@ -9,16 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var project_1 = require('./project');
+var project_service_1 = require('./project.service');
 var ProjectTrackerComponent = (function () {
-    function ProjectTrackerComponent() {
+    function ProjectTrackerComponent(projectService) {
+        this.projectService = projectService;
         this.viewpage = 0;
+        this.selectedProject = new project_1.Project(0, '', '', '', '');
     }
     ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             templateUrl: "project-tracker.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [project_service_1.ProjectService])
     ], ProjectTrackerComponent);
     return ProjectTrackerComponent;
 }());
