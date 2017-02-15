@@ -14,6 +14,7 @@ var ProjectListComponent = (function () {
     function ProjectListComponent() {
     }
     ProjectListComponent.prototype.newProject = function () {
+        this.mainProject.newRecord();
     };
     ProjectListComponent.prototype.deleteProject = function (projectid) {
         this.mainProject.projectService.deleteProject(projectid);

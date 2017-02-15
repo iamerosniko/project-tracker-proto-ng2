@@ -9,12 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var project_tracker_component_1 = require('./project-tracker.component');
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent(route, router) {
-        this.route = route;
-        this.router = router;
+    function ProjectEditComponent() {
         this.isNew = false;
         this.submitted = false;
         this.technology = [
@@ -29,8 +26,9 @@ var ProjectEditComponent = (function () {
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.mainProject.saveRecord();
         setTimeout(function () {
-            _this.router.navigate(['/project-tracker']);
+            _this.backtoList();
         }, 2000);
     };
     Object.defineProperty(ProjectEditComponent.prototype, "diagnostic", {
@@ -48,7 +46,7 @@ var ProjectEditComponent = (function () {
             templateUrl: 'project-edit.component.html',
             selector: 'project-edit'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [])
     ], ProjectEditComponent);
     return ProjectEditComponent;
 }());

@@ -22,6 +22,14 @@ var ProjectTrackerComponent = (function () {
         var _this = this;
         this.projectService.getProjects().then(function (project) { return _this.projectList = project; });
     };
+    ProjectTrackerComponent.prototype.newRecord = function () {
+        this.selectedProject = new project_1.Project(0, '', '', '', '');
+        this.isNew = true;
+        this.viewpage = 1;
+    };
+    ProjectTrackerComponent.prototype.saveRecord = function () {
+        this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
+    };
     ProjectTrackerComponent.prototype.ngOnInit = function () {
         this.refreshList();
     };

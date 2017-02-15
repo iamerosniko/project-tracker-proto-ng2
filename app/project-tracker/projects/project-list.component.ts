@@ -17,7 +17,7 @@ export class ProjectListComponent{
     @Input() mainProject:ProjectTrackerComponent;
 
     newProject(): void {
-        
+        this.mainProject.newRecord();
     }
 
     deleteProject(projectid: number){

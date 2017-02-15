@@ -20,24 +20,16 @@ export class ProjectEditComponent{
         'MS Access FrontEnd + Backend'
     ];
     
-
-    constructor(
-        private route: ActivatedRoute,
-        private router: Router
-    ){
-        
-    }
-    
     backtoList(): void {
         this.mainProject.viewpage=0;
         this.mainProject.refreshList();
     }
 
     onSubmit(): void {
-        
+        this.mainProject.saveRecord();
         setTimeout(
             () => {
-                this.router.navigate(['/project-tracker'])
+                this.backtoList();
             }, 
             2000
         );
