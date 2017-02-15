@@ -13,7 +13,6 @@ import { Project } from './project'
 })
 
 export class ProjectListComponent{
-    projectList : Project[];
     @Input() mainProject:ProjectTrackerComponent;
 
     newProject(): void {
@@ -21,7 +20,7 @@ export class ProjectListComponent{
     }
 
     deleteProject(projectid: number){
-        this.mainProject.projectService.deleteProject(projectid)
+        this.mainProject.deleteRecord(projectid);
         this.mainProject.refreshList();
     }
 

@@ -30,6 +30,10 @@ export class ProjectTrackerComponent implements OnInit{
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
     }
 
+    deleteRecord(id:number): void{
+        this.projectService.deleteProject(id);
+    }
+
     ngOnInit(){
         this.refreshList();
     }
