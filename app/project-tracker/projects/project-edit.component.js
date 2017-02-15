@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var project_tracker_component_1 = require('./project-tracker.component');
 var ProjectEditComponent = (function () {
     function ProjectEditComponent() {
-        this.isNew = false;
         this.submitted = false;
         this.technology = [
             '.NET Technology',
@@ -26,8 +25,10 @@ var ProjectEditComponent = (function () {
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.submitted = true;
         this.mainProject.saveRecord();
         setTimeout(function () {
+            _this.submitted = false;
             _this.backtoList();
         }, 2000);
     };

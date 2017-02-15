@@ -11,7 +11,6 @@ import { ProjectTrackerComponent } from './project-tracker.component'
 
 export class ProjectEditComponent{
     @Input() mainProject:ProjectTrackerComponent;
-    isNew : boolean = false;
     submitted = false;
 
     technology = [
@@ -26,9 +25,11 @@ export class ProjectEditComponent{
     }
 
     onSubmit(): void {
+        this.submitted = true;
         this.mainProject.saveRecord();
         setTimeout(
             () => {
+                this.submitted=false;
                 this.backtoList();
             }, 
             2000
