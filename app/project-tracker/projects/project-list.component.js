@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var project_tracker_component_1 = require('./project-tracker.component');
+var project_parent_component_1 = require('./project-parent.component');
 var ProjectListComponent = (function () {
     function ProjectListComponent() {
     }
@@ -26,7 +26,7 @@ var ProjectListComponent = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', project_tracker_component_1.ProjectTrackerComponent)
+        __metadata('design:type', project_parent_component_1.ProjectParentComponent)
     ], ProjectListComponent.prototype, "mainProject", void 0);
     ProjectListComponent = __decorate([
         core_1.Component({

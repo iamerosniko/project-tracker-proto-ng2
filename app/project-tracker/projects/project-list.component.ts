@@ -1,7 +1,7 @@
 import  { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UUID } from 'angular2-uuid';
-import { ProjectTrackerComponent } from './project-tracker.component';
+import { ProjectParentComponent } from './project-parent.component';
 import { ProjectService } from './project.service';
 import { ProjectEditComponent } from './project-edit.component';
 import { Project } from './project'
@@ -13,7 +13,7 @@ import { Project } from './project'
 })
 
 export class ProjectListComponent{
-    @Input() mainProject:ProjectTrackerComponent;
+    @Input() mainProject:ProjectParentComponent;
 
     newProject(): void {
         this.mainProject.newRecord();

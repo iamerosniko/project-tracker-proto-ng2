@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 
-import { ProjectTrackerComponent } from './project-tracker.component'
+import { ProjectParentComponent } from './project-parent.component'
 
 @Component({
     moduleId: module.id,
@@ -10,7 +10,7 @@ import { ProjectTrackerComponent } from './project-tracker.component'
 })
 
 export class ProjectEditComponent{
-    @Input() mainProject:ProjectTrackerComponent;
+    @Input() mainProject:ProjectParentComponent;
     submitted = false;
 
     technology = [
