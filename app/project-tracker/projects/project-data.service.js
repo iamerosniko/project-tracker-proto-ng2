@@ -5,14 +5,14 @@ var ProjectDataService = (function () {
     ProjectDataService.prototype.createDb = function () {
         var projects = [
             {
-                id: 1,
+                id: "1",
                 projectName: "sample 1",
                 description: "desc",
                 technology: ".Net Projects",
                 owner: "eros niko"
             },
             {
-                id: 2,
+                id: "2",
                 projectName: "sample 2",
                 description: "desc",
                 technology: ".Net Projects",

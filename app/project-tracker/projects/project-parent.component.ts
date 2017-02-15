@@ -11,7 +11,7 @@ export class ProjectParentComponent implements OnInit{
     projectList : Project[];
     viewpage : number = 0;
     isNew : boolean = false;
-    selectedProject : Project = new Project(0,'','','','');
+    selectedProject : Project = new Project('','','','','');
     constructor(
         public projectService: ProjectService
     ){ }
@@ -30,7 +30,7 @@ export class ProjectParentComponent implements OnInit{
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
     }
 
-    deleteRecord(id:UUID): void{
+    deleteRecord(id:string): void{
         this.projectService.deleteProject(id);
     }
 

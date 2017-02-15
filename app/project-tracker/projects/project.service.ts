@@ -51,7 +51,7 @@ export class ProjectService {
                 .catch(this.handleError);
     }
 
-    deleteProject(id: UUID): Promise<void> {
+    deleteProject(id: string): Promise<void> {
         const url = `${this.projectsUrl}/${id}`;
 
         return this.http.delete(url, {headers: this.headers})

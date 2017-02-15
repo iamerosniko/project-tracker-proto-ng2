@@ -17,7 +17,7 @@ var ProjectParentComponent = (function () {
         this.projectService = projectService;
         this.viewpage = 0;
         this.isNew = false;
-        this.selectedProject = new project_1.Project(0, '', '', '', '');
+        this.selectedProject = new project_1.Project('', '', '', '', '');
     }
     ProjectParentComponent.prototype.refreshList = function () {
         var _this = this;

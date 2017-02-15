@@ -1,7 +1,6 @@
-import { UUID } from 'angular2-uuid';
 export class Project {
     constructor (
-        public id: UUID,
+        public id: string,
         public projectName: string,
         public description: string,
         public technology?: string,

@@ -19,7 +19,7 @@ export class ProjectListComponent{
         this.mainProject.newRecord();
     }
 
-    deleteProject(projectid: UUID){
+    deleteProject(projectid: string){
         this.mainProject.deleteRecord(projectid);
         this.mainProject.refreshList();
     }
