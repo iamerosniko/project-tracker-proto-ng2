@@ -13,18 +13,11 @@ var project_tracker_component_1 = require('./project-tracker.component');
 var ProjectListComponent = (function () {
     function ProjectListComponent() {
     }
-    ProjectListComponent.prototype.getProjects = function () {
-        var _this = this;
-        this.mainProject.projectService.getProjects().then(function (project) { return _this.mainProject.projectList = project; });
-    };
     ProjectListComponent.prototype.newProject = function () {
-    };
-    ProjectListComponent.prototype.ngOnInit = function () {
-        this.getProjects();
     };
     ProjectListComponent.prototype.deleteProject = function (projectid) {
         this.mainProject.projectService.deleteProject(projectid);
-        this.getProjects();
+        this.mainProject.refreshList();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
         this.mainProject.viewpage = 1;

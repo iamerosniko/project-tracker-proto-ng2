@@ -24,8 +24,8 @@ var ProjectEditComponent = (function () {
         ];
     }
     ProjectEditComponent.prototype.backtoList = function () {
-    };
-    ProjectEditComponent.prototype.refreshList = function () {
+        this.mainProject.viewpage = 0;
+        this.mainProject.refreshList();
     };
     ProjectEditComponent.prototype.onSubmit = function () {
         var _this = this;

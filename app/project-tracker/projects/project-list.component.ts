@@ -12,24 +12,17 @@ import { Project } from './project'
     selector: 'project-list'
 })
 
-export class ProjectListComponent implements OnInit{
+export class ProjectListComponent{
     projectList : Project[];
     @Input() mainProject:ProjectTrackerComponent;
 
-    getProjects(): void {
-        this.mainProject.projectService.getProjects().then(project => this.mainProject.projectList = project );
-    }
-
     newProject(): void {
-    }
-
-    ngOnInit(): void {
-        this.getProjects();
+        
     }
 
     deleteProject(projectid: number){
         this.mainProject.projectService.deleteProject(projectid)
-        this.getProjects();
+        this.mainProject.refreshList();
     }
 
     onSelect(project: Project) {

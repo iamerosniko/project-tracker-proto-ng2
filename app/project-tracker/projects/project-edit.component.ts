@@ -29,11 +29,8 @@ export class ProjectEditComponent{
     }
     
     backtoList(): void {
-
-    }
-
-    refreshList(): void{
-        
+        this.mainProject.viewpage=0;
+        this.mainProject.refreshList();
     }
 
     onSubmit(): void {

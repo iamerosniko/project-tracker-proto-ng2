@@ -15,8 +15,16 @@ var ProjectTrackerComponent = (function () {
     function ProjectTrackerComponent(projectService) {
         this.projectService = projectService;
         this.viewpage = 0;
+        this.isNew = false;
         this.selectedProject = new project_1.Project(0, '', '', '', '');
     }
+    ProjectTrackerComponent.prototype.refreshList = function () {
+        var _this = this;
+        this.projectService.getProjects().then(function (project) { return _this.projectList = project; });
+    };
+    ProjectTrackerComponent.prototype.ngOnInit = function () {
+        this.refreshList();
+    };
     ProjectTrackerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
