@@ -46,19 +46,20 @@ export class ProjectService {
         const url = `${this.projectsUrl}/${project.pt_project_id}`;
         alert("put");
         return this.http
-                .put(url, JSON.stringify(project), {headers: this.headers})
-                .toPromise()
-                .then(() => project)
-                .catch(this.handleError);
+            .put(url, JSON.stringify(project), {headers: this.headers})
+            .toPromise()
+            .then(() => project)
+            .catch(this.handleError);
     }
 
-    deleteProject(id: string): Promise<void> {
-        const url = `${this.projectsUrl}/${id}`;
+    deleteProject(project: Project): Promise<void> {
+        const url = `${this.projectsUrl}/${project.pt_project_id}`;
 
-        return this.http.delete(url, {headers: this.headers})
-                .toPromise()
-                .then(() => null)
-                .catch(this.handleError);
+        return this.http
+            .put(url, JSON.stringify(project), {headers: this.headers})
+            .toPromise()
+            .then(() => null)
+            .catch(this.handleError);
     }
 
     private handleError(error: any): Promise<any> {

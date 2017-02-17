@@ -19,8 +19,8 @@ export class ProjectListComponent{
         this.mainProject.newRecord();
     }
 
-    deleteProject(projectid: string){
-        this.mainProject.deleteRecord(projectid);
+    deleteProject(project: Project){
+        this.mainProject.deleteRecord(project);
         this.mainProject.refreshList();
     }
 
