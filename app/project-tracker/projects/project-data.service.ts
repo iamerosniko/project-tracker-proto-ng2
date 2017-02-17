@@ -1,20 +1,22 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { UUID } from 'angular2-uuid';
+
 export class ProjectDataService implements InMemoryDbService {
   createDb() {
     let projects = [
         { 
-            id: "1",
-            projectName: "sample 1",
-            description: "desc",
-            technology: ".Net Projects",
-            owner: "eros niko"
+            pt_project_id: UUID.UUID(),
+            pt_project_name: "sample 1",
+            pt_project_desc: "desc",
+            pt_project_tech: "MS Access FrontEnd + Backend",
+            pt_project_owner: "eros niko"
         },
         {
-            id: "2",
-            projectName: "sample 2",
-            description: "desc",
-            technology: ".Net Projects",
-            owner: "eros niko"
+            pt_project_id: UUID.UUID(),
+            pt_project_name: "sample 2",
+            pt_project_desc: "desc",
+            pt_project_tech: "MS Access FrontEnd + Backend",
+            pt_project_owner: "eros niko"
         }
     ];
     return {projects};

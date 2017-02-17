@@ -21,6 +21,7 @@ export class ProjectService {
             .catch(this.handleError);
     }
 
+
     getProjects(): Promise<Project[]> {
         return this.http
                 .get(this.projectsUrl, {headers: this.headers})
@@ -30,7 +31,7 @@ export class ProjectService {
                 .catch(this.handleError);
     }
 
-    getProject(id: number): Promise<Project> {
+    getProject(id: string): Promise<Project> {
         const url = `${this.projectsUrl}/${id}`;
 
         return this.http
@@ -42,8 +43,8 @@ export class ProjectService {
     }
 
     putProject(project: Project): Promise<Project> {
-        const url = `${this.projectsUrl}/${project.id}`;
-
+        const url = `${this.projectsUrl}/${project.pt_project_id}`;
+        alert("put");
         return this.http
                 .put(url, JSON.stringify(project), {headers: this.headers})
                 .toPromise()

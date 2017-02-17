@@ -21,6 +21,7 @@ var ProjectListComponent = (function () {
         this.mainProject.refreshList();
     };
     ProjectListComponent.prototype.onSelect = function (project) {
+        this.mainProject.isNew = false;
         this.mainProject.viewpage = 1;
         this.mainProject.selectedProject = project;
     };

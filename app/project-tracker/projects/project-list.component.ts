@@ -1,4 +1,4 @@
-import  { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UUID } from 'angular2-uuid';
 import { ProjectParentComponent } from './project-parent.component';
@@ -25,6 +25,7 @@ export class ProjectListComponent{
     }
 
     onSelect(project: Project) {
+        this.mainProject.isNew=false;
         this.mainProject.viewpage=1;
         this.mainProject.selectedProject=project;
     }

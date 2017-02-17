@@ -41,7 +41,8 @@ var ProjectService = (function () {
             .catch(this.handleError);
     };
     ProjectService.prototype.putProject = function (project) {
-        var url = this.projectsUrl + "/" + project.id;
+        var url = this.projectsUrl + "/" + project.pt_project_id;
+        alert("put");
         return this.http
             .put(url, JSON.stringify(project), { headers: this.headers })
             .toPromise()
