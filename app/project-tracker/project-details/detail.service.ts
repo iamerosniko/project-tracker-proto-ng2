@@ -2,7 +2,7 @@ import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { UUID } from 'angular2-uuid';
-import { Project } from '../projects/project';
+import { Detail } from './detail';
 
 @Injectable()
 export class DetailService {
@@ -12,41 +12,41 @@ export class DetailService {
 
     constructor(private http: Http){}
     
-    postDetail(newProject: Project): Promise<Project> {
+    postDetail(newDetail: Detail): Promise<Detail> {
         return this.http
-            .post(this.detailsUrl, JSON.stringify(newProject), {headers: this.headers})
+            .post(this.detailsUrl, JSON.stringify(newDetail), {headers: this.headers})
             .toPromise()
             .then(res => res.json())  // testing
             .catch(this.handleError);
     }
 
 
-    getDetails(): Promise<Project[]> {
+    getDetails(): Promise<Detail[]> {
         return this.http
                 .get(this.detailsUrl, {headers: this.headers})
                 .toPromise()
-                .then(response => response.json().data as Project[]) //testing
+                .then(response => response.json().data as Detail[]) //testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
     }
 
-    getDetail(id: string): Promise<Project> {
+    getDetail(id: string): Promise<Detail> {
         const url = `${this.detailsUrl}/${id}`;
 
         return this.http
                 .get(url)
                 .toPromise()
-                .then(response => response.json().data as Project)  // testing
+                .then(response => response.json().data as Detail)  // testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
     }
 
-    putDetail(project: Project): Promise<Project> {
-        const url = `${this.detailsUrl}/${project.pt_project_id}`;
+    putDetail(detail: Detail): Promise<Detail> {
+        const url = `${this.detailsUrl}/${detail.pt_project_id}`;
         return this.http
-            .put(url, JSON.stringify(project), {headers: this.headers})
+            .put(url, JSON.stringify(detail), {headers: this.headers})
             .toPromise()
-            .then(() => project)
+            .then(() => detail)
             .catch(this.handleError);
     }
 
