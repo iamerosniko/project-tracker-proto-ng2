@@ -27,4 +27,8 @@ export class ProjectListComponent{
         this.mainProject.viewpage=1;
         this.mainProject.selectedProject=project;
     }
+
+    gotoDetailSelect(project: Project){
+        this.mainProject.gotoDetail(project);
+    }
 }
