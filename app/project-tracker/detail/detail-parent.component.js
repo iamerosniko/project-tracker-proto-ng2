@@ -30,7 +30,7 @@ var DetailParentComponent = (function () {
     DetailParentComponent.prototype.newRecord = function () {
         this.selectedDetail = new detail_1.Detail(angular2_uuid_1.UUID.UUID(), this.projectID, '', '', '', '', '', new Date(), new Date(), new Date(), new Date(), '', false, true);
         this.isNew = true;
-        this.viewpage1 = 1;
+        this.viewpage = 1;
     };
     DetailParentComponent.prototype.saveRecord = function () {
         this.isNew ? this.detailService.postDetail(this.selectedDetail) : this.detailService.putDetail(this.selectedDetail);
