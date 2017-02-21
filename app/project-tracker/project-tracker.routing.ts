@@ -6,7 +6,8 @@ import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectParentComponent } from './projects/project-parent.component';
 const projectTrackerRoutes: Routes = [
     //paths
-    { path : 'project-tracker', component: ProjectParentComponent }
+    { path : 'project-tracker', component: ProjectParentComponent },
+    { path : 'project', component: ProjectParentComponent }
 ];
 
  @NgModule ({
