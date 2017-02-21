@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,  Params, Router } from '@angular/router';
 import { Detail } from './detail';
 import { DetailService } from './detail.service';
 import { UUID } from 'angular2-uuid';
@@ -15,11 +16,13 @@ export class DetailParentComponent implements OnInit{
     selectedDetail : Detail = new Detail('','','','','','','',
         new Date(),new Date(),new Date(),new Date(),'',false,true);
     constructor(
-        public detailService: DetailService
+        public detailService: DetailService,
+        private route: ActivatedRoute,
+        private router: Router
     ){ }
 
     refreshList(): void {
-        this.detailService.getDetails().then(detail => this.detailList = detail );
+        this.detailService.getDetails(this.projectID).then(detail => this.detailList = detail );
     }
 
     newRecord(): void{
@@ -48,10 +51,13 @@ export class DetailParentComponent implements OnInit{
     }
 
     getSelectedProjectID(){
-        this.projectID="";
+        this.route.params.subscribe(params => {
+            this.projectID = params['id'];});
+            alert(this.projectID);
     }
 
     ngOnInit(){
         this.refreshList();
+        this.getSelectedProjectID();
     }
 }

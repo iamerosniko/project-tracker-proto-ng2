@@ -21,7 +21,7 @@ export class DetailService {
     }
 
 
-    getDetails(): Promise<Detail[]> {
+    getDetails(id: string): Promise<Detail[]> {
         return this.http
                 .get(this.detailsUrl, {headers: this.headers})
                 .toPromise()
