@@ -4,10 +4,10 @@ import { DetailService } from './detail.service';
 import { UUID } from 'angular2-uuid';
 @Component({
     moduleId: module.id,
-    templateUrl:`project-parent.component.html`
+    templateUrl:`detail-parent.component.html`
 })
 
-export class ProjectParentComponent implements OnInit{
+export class DetailParentComponent implements OnInit{
     detailList : Detail[];
     viewpage : number = 0;
     isNew : boolean = false;

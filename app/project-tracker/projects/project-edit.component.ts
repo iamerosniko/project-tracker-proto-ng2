@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
-
 import { ProjectParentComponent } from './project-parent.component'
 
 @Component({
