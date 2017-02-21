@@ -10,7 +10,7 @@ import { Detail } from './detail'
     selector: 'detail-list'
 })
 
-export class ProjectListComponent{
+export class DetailListComponent{
     @Input() mainDetail:DetailParentComponent;
 
     newProject(): void {

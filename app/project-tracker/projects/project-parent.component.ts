@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Project } from './project';
 import { ProjectService } from './project.service';
 import { UUID } from 'angular2-uuid';
@@ -13,6 +15,7 @@ export class ProjectParentComponent implements OnInit{
     isNew : boolean = false;
     selectedProject : Project = new Project('','','','','',false,true);
     constructor(
+        private router: Router,
         public projectService: ProjectService
     ){ }
 
@@ -42,6 +45,10 @@ export class ProjectParentComponent implements OnInit{
                 750
             );
         }
+    }
+    
+    gotoDetail(project:Project){
+        this.router.navigate(['/project', project.pt_project_id]);
     }
 
     ngOnInit(){

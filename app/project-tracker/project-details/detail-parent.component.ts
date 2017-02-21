@@ -9,6 +9,7 @@ import { UUID } from 'angular2-uuid';
 
 export class DetailParentComponent implements OnInit{
     detailList : Detail[];
+    projectID : string ='';
     viewpage : number = 0;
     isNew : boolean = false;
     selectedDetail : Detail = new Detail('','','','','','','',
@@ -22,7 +23,7 @@ export class DetailParentComponent implements OnInit{
     }
 
     newRecord(): void{
-        this.selectedDetail=new Detail('','','','','','','',
+        this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',
         new Date(),new Date(),new Date(),new Date(),'',false,true);
         this.isNew=true;
         this.viewpage=1;
@@ -44,6 +45,10 @@ export class DetailParentComponent implements OnInit{
                 750
             );
         }
+    }
+
+    getSelectedProjectID(){
+        this.projectID="";
     }
 
     ngOnInit(){

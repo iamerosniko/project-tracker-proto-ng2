@@ -8,7 +8,7 @@ import { DetailParentComponent } from './detail-parent.component'
     selector: 'project-edit'
 })
 
-export class ProjectEditComponent{
+export class DetailEditComponent{
     @Input() mainDetail:DetailParentComponent;
     submitted = false;
 
