@@ -46,7 +46,7 @@ var DetailEditComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'detail-edit.component.html',
-            selector: 'project-edit'
+            selector: 'detail-edit'
         }), 
         __metadata('design:paramtypes', [])
     ], DetailEditComponent);

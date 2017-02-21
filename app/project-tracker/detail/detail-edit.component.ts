@@ -5,7 +5,7 @@ import { DetailParentComponent } from './detail-parent.component'
 @Component({
     moduleId: module.id,
     templateUrl: 'detail-edit.component.html',
-    selector: 'project-edit'
+    selector: 'detail-edit'
 })
 
 export class DetailEditComponent{

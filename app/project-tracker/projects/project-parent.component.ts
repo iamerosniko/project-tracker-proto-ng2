@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { Project } from './project';
 import { ProjectService } from './project.service';
 import { UUID } from 'angular2-uuid';

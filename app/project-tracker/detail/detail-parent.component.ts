@@ -29,7 +29,7 @@ export class DetailParentComponent implements OnInit{
         this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',
         new Date(),new Date(),new Date(),new Date(),'',false,true);
         this.isNew=true;
-        this.viewpage=1;
+        this.viewpage1=1;
     }
     
     saveRecord(): void{
