@@ -11,9 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var project_parent_component_1 = require('./projects/project-parent.component');
+//Details
+var detail_list_component_1 = require('./detail/detail-list.component');
 var projectTrackerRoutes = [
     //paths
-    { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent }
+    { path: 'project-tracker', component: project_parent_component_1.ProjectParentComponent },
+    { path: 'project/:id', component: detail_list_component_1.DetailListComponent },
 ];
 var ProjectTrackerRouting = (function () {
     function ProjectTrackerRouting() {

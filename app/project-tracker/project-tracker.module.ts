@@ -7,6 +7,10 @@ import { Routes } from '@angular/router';
 import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
 import { ProjectParentComponent } from './projects/project-parent.component';
+//Details
+import { DetailListComponent } from './detail/detail-list.component';
+import { DetailEditComponent } from './detail/detail-edit.component';
+import { DetailParentComponent } from './detail/detail-parent.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -25,7 +29,10 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
     declarations: [
         ProjectListComponent,
         ProjectEditComponent,
-        ProjectParentComponent
+        ProjectParentComponent,
+        DetailListComponent,
+        DetailEditComponent,
+        DetailParentComponent
     ],
     providers: [
         ProjectService
