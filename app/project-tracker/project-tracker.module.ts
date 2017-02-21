@@ -13,6 +13,7 @@ import { DetailEditComponent } from './detail/detail-edit.component';
 import { DetailParentComponent } from './detail/detail-parent.component';
 //service
 import { ProjectService } from './projects/project.service';
+import { DetailService } from './detail/detail.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProjectDataService }  from './projects/project-data.service';
 
@@ -35,7 +36,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         DetailParentComponent
     ],
     providers: [
-        ProjectService
+        ProjectService,DetailService
     ]
 })
 
