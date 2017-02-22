@@ -35,7 +35,6 @@ var DetailService = (function () {
     //}
     DetailService.prototype.getDetails = function (id) {
         var url = this.detailsUrl + "/?projectID=" + id;
-        alert("me");
         return this.http
             .get(url, { headers: this.headers })
             .toPromise()
@@ -43,9 +42,9 @@ var DetailService = (function () {
             .catch(this.handleError);
     };
     DetailService.prototype.getDetail = function (id) {
-        var url = this.detailsUrl + "/" + id;
+        var url = this.detailsUrl + "/GetDetail/?detailID=" + id;
         return this.http
-            .get(url)
+            .get(url, { headers: this.headers })
             .toPromise()
             .then(function (response) { return response.json().data; }) // testing
             .catch(this.handleError);

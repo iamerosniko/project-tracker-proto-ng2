@@ -53,7 +53,6 @@ export class DetailParentComponent implements OnInit{
     getSelectedProjectID(){
         this.route.params.subscribe(params => {
             this.projectID = params['id'];});
-            alert(this.projectID);
     }
 
     ngOnInit(){
