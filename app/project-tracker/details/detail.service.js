@@ -34,7 +34,7 @@ var DetailService = (function () {
     //       .catch(this.handleError);
     //}
     DetailService.prototype.getDetails = function (id) {
-        var url = this.detailsUrl + "/?ID=" + id;
+        var url = this.detailsUrl + "/?projectID=" + id;
         alert("me");
         return this.http
             .get(url, { headers: this.headers })

@@ -31,7 +31,7 @@ export class DetailService {
     //}
     
     getDetails(id: string): Promise<Detail[]> {
-        const url = `${this.detailsUrl}/?ID=${id}`;
+        const url = `${this.detailsUrl}/?projectID=${id}`;
         alert("me");
         return this.http
                 .get(url, {headers: this.headers})
