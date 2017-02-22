@@ -57,7 +57,7 @@ export class DetailParentComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.refreshList();
         this.getSelectedProjectID();
+        this.refreshList();
     }
 }

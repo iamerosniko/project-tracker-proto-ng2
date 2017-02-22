@@ -21,9 +21,20 @@ export class DetailService {
     }
 
 
+    //getDetails(id: string): Promise<Detail[]> {
+        //return this.http
+          //      .get(this.detailsUrl, {headers: this.headers})
+          //      .toPromise()
+          //      .then(response => response.json().data as Detail[]) //testing
+                //.then(response => response.json())  // live
+         //       .catch(this.handleError);
+    //}
+    
     getDetails(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/?ID=${id}`;
+        alert("me");
         return this.http
-                .get(this.detailsUrl, {headers: this.headers})
+                .get(url, {headers: this.headers})
                 .toPromise()
                 .then(response => response.json().data as Detail[]) //testing
                 //.then(response => response.json())  // live
