@@ -50,6 +50,7 @@ export class DetailService {
                 .then(response => response.json().data as Detail)  // testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
+                
     }
 
     putDetail(detail: Detail): Promise<Detail> {
