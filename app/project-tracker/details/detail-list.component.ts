@@ -17,7 +17,7 @@ export class DetailListComponent{
         this.mainDetail.newRecord();
     }
 
-    deleteProject(detail: Detail){
+    delete(detail: Detail){
         this.mainDetail.deleteRecord(detail);
         this.mainDetail.refreshList();
     }

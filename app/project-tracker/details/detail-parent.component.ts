@@ -15,6 +15,7 @@ export class DetailParentComponent implements OnInit{
     isNew : boolean = false;
     selectedDetail : Detail = new Detail('','','','','','','',
         new Date(),new Date(),new Date(),new Date(),'',false,true);
+        
     constructor(
         public detailService: DetailService,
         private route: ActivatedRoute,
