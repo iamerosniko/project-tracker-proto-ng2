@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 //Projects
 import { ProjectParentComponent } from './projects/project-parent.component';
 //Details
-import { DetailParentComponent } from './detail/detail-parent.component';
+import { DetailParentComponent } from './details/detail-parent.component';
 
 const projectTrackerRoutes: Routes = [
     //paths

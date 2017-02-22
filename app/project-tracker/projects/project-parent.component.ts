@@ -24,7 +24,7 @@ export class ProjectParentComponent implements OnInit{
 
     newRecord(): void{
         this.selectedProject=new Project( UUID.UUID(),'','','','',false,true);
-        this.isNew=true;
+        this.isNew=true; 
         this.viewpage=1;
     }
     

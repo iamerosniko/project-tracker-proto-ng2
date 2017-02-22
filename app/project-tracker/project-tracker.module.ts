@@ -8,12 +8,12 @@ import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
 import { ProjectParentComponent } from './projects/project-parent.component';
 //Details
-import { DetailListComponent } from './detail/detail-list.component';
-import { DetailEditComponent } from './detail/detail-edit.component';
-import { DetailParentComponent } from './detail/detail-parent.component';
+import { DetailListComponent } from './details/detail-list.component';
+import { DetailEditComponent } from './details/detail-edit.component';
+import { DetailParentComponent } from './details/detail-parent.component';
 //service
 import { ProjectService } from './projects/project.service';
-import { DetailService } from './detail/detail.service';
+import { DetailService } from './details/detail.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProjectDataService }  from './projects/project-data.service';
 
