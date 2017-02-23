@@ -10,7 +10,7 @@ import { Detail } from './detail'
     selector: 'detail-list'
 })
 
-export class DetailListComponent{
+export class DetailListComponent implements OnInit{
     @Input() mainDetail:DetailParentComponent;
 
     newProject(): void {
@@ -26,5 +26,9 @@ export class DetailListComponent{
         this.mainDetail.isNew=false;
         this.mainDetail.viewpage=1;
         this.mainDetail.selectedDetail=detail;
+    }
+
+    ngOnInit(){
+        this.mainDetail.getProjectDetail();
     }
 }

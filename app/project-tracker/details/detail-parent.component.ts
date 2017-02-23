@@ -12,7 +12,7 @@ import { UUID } from 'angular2-uuid';
 })
 
 export class DetailParentComponent implements OnInit{
-    project : Project;
+    project : Project = new Project('','','','','',false,false);
     detailList : Detail[];
     projectID : string ='';
     viewpage : number = 0;
@@ -31,8 +31,9 @@ export class DetailParentComponent implements OnInit{
         this.detailService.getDetails(this.projectID).then(detail => this.detailList = detail );
     }
 
-    getProjectDetail(projectID : string): void{
-        this.projectService.getProject(projectID).then(project => this.project = project);
+    getProjectDetail(): void{
+        this.projectService.getProject(this.projectID).then(project => this.project = project);
+       
     }
 
     newRecord(): void{
@@ -62,7 +63,7 @@ export class DetailParentComponent implements OnInit{
 
     getSelectedProjectID(){
         this.route.params.subscribe(params => {
-            this.projectID = params['id'];});
+            this.projectID = params['id'];});    
     }
 
     ngOnInit(){

@@ -32,14 +32,14 @@ export class ProjectService {
     }
 
     getProject(id: string): Promise<Project> {
-        const url = `${this.projectsUrl}/${id}`;
-
+        const url = `${this.projectsUrl}/?projectID=${id}`;
         return this.http
                 .get(url)
                 .toPromise()
                 .then(response => response.json().data as Project)  // testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
+                 
     }
 
     putProject(project: Project): Promise<Project> {
