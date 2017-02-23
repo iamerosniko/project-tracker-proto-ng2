@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
-import { Detail } from './detail';
 import { DetailService } from './detail.service';
+import { ProjectService } from '../projects/project.service';
+import { Detail } from './detail';
+import { Project } from '../projects/project';
 import { UUID } from 'angular2-uuid';
+
 @Component({
     moduleId: module.id,
     templateUrl:`detail-parent.component.html`
 })
 
 export class DetailParentComponent implements OnInit{
+    project : Project;
     detailList : Detail[];
     projectID : string ='';
     viewpage : number = 0;
@@ -18,12 +22,17 @@ export class DetailParentComponent implements OnInit{
         
     constructor(
         public detailService: DetailService,
+        private projectService : ProjectService,
         private route: ActivatedRoute,
         private router: Router
     ){ }
 
     refreshList(): void {
         this.detailService.getDetails(this.projectID).then(detail => this.detailList = detail );
+    }
+
+    getProjectDetail(projectID : string): void{
+        this.projectService.getProject(projectID).then(project => this.project = project);
     }
 
     newRecord(): void{
