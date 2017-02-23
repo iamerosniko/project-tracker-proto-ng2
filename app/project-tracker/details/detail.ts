@@ -11,7 +11,7 @@ export class Detail {
         public pt_detail_estend: Date,
         public pt_detail_actstart: Date,
         public pt_detail_actend: Date,
-        public pt_detail_staus: string,
+        public pt_detail_status: string,
         public pt_detail_deleted: Boolean,
         public pt_detail_show: boolean
     ){}

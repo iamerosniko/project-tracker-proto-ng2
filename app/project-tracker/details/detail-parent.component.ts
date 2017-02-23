@@ -61,13 +61,13 @@ export class DetailParentComponent implements OnInit{
         }
     }
 
-    getSelectedProjectID(){
+    getselectedDetailID(){
         this.route.params.subscribe(params => {
             this.projectID = params['id'];});    
     }
 
     ngOnInit(){
-        this.getSelectedProjectID();
+        this.getselectedDetailID();
         this.refreshList();
     }
 }
