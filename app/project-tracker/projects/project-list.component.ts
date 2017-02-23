@@ -12,7 +12,7 @@ import { Project } from './project'
 
 export class ProjectListComponent{
     @Input() mainProject:ProjectParentComponent;
-
+    
     newProject(): void {
         this.mainProject.newRecord();
     }

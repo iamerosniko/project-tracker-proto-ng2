@@ -11,3 +11,7 @@ h1 {
 .ng-invalid:not(form) {
   border-left: 5px solid #a94442;
 }
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+  color: black;
+}

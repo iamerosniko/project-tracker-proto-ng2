@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 import { DetailParentComponent } from './detail-parent.component';
-import { DatepickerModule } from 'angular2-material-datepicker';
 
 @Component({
     moduleId: module.id,
@@ -14,7 +13,10 @@ export class DetailEditComponent{
     submitted = false;
     //date: DateModel;
     //options: DatePickerOptions;
-
+    private myDatePickerOptions: IMyOptions = {
+        // other options...
+        dateFormat: 'dd.mm.yyyy',
+    };
     constructor() {
         //this.options = new DatePickerOptions();
     }

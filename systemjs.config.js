@@ -30,7 +30,6 @@
       'ng2-file-upload' : 'npm:ng2-file-upload',
       'angular2-uuid': 'npm:angular2-uuid/index.js',
       
-      'angular2-material-datepicker': 'npm:angular2-material-datepicker',
       //express  
       'express' : 'npm:express'
     },
@@ -51,10 +50,6 @@
       'express' : {
         main: './index.js',
         defaultExtension: 'js'
-      },
-      'angular2-material-datepicker': {
-          main: './index.js',
-          defaultExtension: 'js'
       }
     }
   });

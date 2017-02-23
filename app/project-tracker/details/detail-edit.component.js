@@ -11,10 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var detail_parent_component_1 = require('./detail-parent.component');
 var DetailEditComponent = (function () {
-    //date: DateModel;
-    //options: DatePickerOptions;
     function DetailEditComponent() {
         this.submitted = false;
+        //date: DateModel;
+        //options: DatePickerOptions;
+        this.myDatePickerOptions = {
+            // other options...
+            dateFormat: 'dd.mm.yyyy',
+        };
         this.priority = [
             'High', 'Medium', 'Low'
         ];
