@@ -29,7 +29,8 @@
       'file-saver':'npm:file-saver/file-saver.min.js',
       'ng2-file-upload' : 'npm:ng2-file-upload',
       'angular2-uuid': 'npm:angular2-uuid/index.js',
-      'ng2-datepicker': 'npm:ng2-datepicker/bundle/ng2-datepicker.umd.js',
+      
+      'angular2-material-datepicker': 'npm:angular2-material-datepicker',
       //express  
       'express' : 'npm:express'
     },
@@ -50,6 +51,10 @@
       'express' : {
         main: './index.js',
         defaultExtension: 'js'
+      },
+      'angular2-material-datepicker': {
+          main: './index.js',
+          defaultExtension: 'js'
       }
     }
   });

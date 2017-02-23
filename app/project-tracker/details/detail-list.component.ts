@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UUID } from 'angular2-uuid';
 import { DetailParentComponent } from './detail-parent.component';
-import { Detail } from './detail'
+import { Detail } from './detail';
 
 @Component({
     moduleId: module.id,

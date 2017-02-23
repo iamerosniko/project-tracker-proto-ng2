@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
-import { DetailParentComponent } from './detail-parent.component'
+import { DetailParentComponent } from './detail-parent.component';
+import { DatepickerModule } from 'angular2-material-datepicker';
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,12 @@ import { DetailParentComponent } from './detail-parent.component'
 export class DetailEditComponent{
     @Input() mainDetail:DetailParentComponent;
     submitted = false;
+    //date: DateModel;
+    //options: DatePickerOptions;
 
+    constructor() {
+        //this.options = new DatePickerOptions();
+    }
     priority = [
         'High','Medium','Low'
     ];
