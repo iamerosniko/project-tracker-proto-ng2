@@ -29,7 +29,7 @@
       'file-saver':'npm:file-saver/file-saver.min.js',
       'ng2-file-upload' : 'npm:ng2-file-upload',
       'angular2-uuid': 'npm:angular2-uuid/index.js',
-      
+      'ng2-datetime-picker':'npm:ng2-datetime-picker/dist',
       //express  
       'express' : 'npm:express'
     },
@@ -50,6 +50,10 @@
       'express' : {
         main: './index.js',
         defaultExtension: 'js'
+      },
+      'ng2-datetime-picker':{
+        main: 'ng2-datetime-picker.umd.js', 
+        defaultExtension: 'js' 
       }
     }
   });

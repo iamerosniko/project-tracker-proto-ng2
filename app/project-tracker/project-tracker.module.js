@@ -23,9 +23,10 @@ var detail_parent_component_1 = require('./details/detail-parent.component');
 //service
 var project_service_1 = require('./projects/project.service');
 var detail_service_1 = require('./details/detail.service');
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { ProjectDataService }  from './projects/project-data.service';
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var project_data_service_1 = require('./projects/project-data.service');
 var project_tracker_routing_1 = require('./project-tracker.routing');
+var ng2_datetime_picker_1 = require('ng2-datetime-picker');
 var ProjectTrackerModule = (function () {
     function ProjectTrackerModule() {
     }
@@ -35,7 +36,7 @@ var ProjectTrackerModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                // InMemoryWebApiModule.forRoot(ProjectDataService),
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(project_data_service_1.ProjectDataService), ng2_datetime_picker_1.Ng2DatetimePickerModule,
                 project_tracker_routing_1.ProjectTrackerRouting
             ],
             declarations: [

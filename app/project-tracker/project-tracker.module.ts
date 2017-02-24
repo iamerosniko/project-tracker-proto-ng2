@@ -14,16 +14,17 @@ import { DetailParentComponent } from './details/detail-parent.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { DetailService } from './details/detail.service';
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { ProjectDataService }  from './projects/project-data.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProjectDataService }  from './projects/project-data.service';
 import { ProjectTrackerRouting } from './project-tracker.routing';
 
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         HttpModule,
-        // InMemoryWebApiModule.forRoot(ProjectDataService),
+        InMemoryWebApiModule.forRoot(ProjectDataService),Ng2DatetimePickerModule,
         ProjectTrackerRouting
         
     ],
