@@ -18,7 +18,6 @@ import { DetailService } from './details/detail.service';
 // import { ProjectDataService }  from './projects/project-data.service';
 import { ProjectTrackerRouting } from './project-tracker.routing';
 
-
 @NgModule({
     imports: [
         CommonModule,
