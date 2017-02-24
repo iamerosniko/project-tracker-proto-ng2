@@ -13,10 +13,6 @@ export class DetailEditComponent{
     submitted = false;
     //date: DateModel;
     //options: DatePickerOptions;
-    private myDatePickerOptions: IMyOptions = {
-        // other options...
-        dateFormat: 'dd.mm.yyyy',
-    };
     constructor() {
         //this.options = new DatePickerOptions();
     }
