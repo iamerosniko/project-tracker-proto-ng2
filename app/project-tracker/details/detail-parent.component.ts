@@ -17,8 +17,7 @@ export class DetailParentComponent implements OnInit{
     projectID : string ='';
     viewpage : number = 0;
     isNew : boolean = false;
-    selectedDetail : Detail = new Detail('','','','','','','',
-        new Date(),new Date(),new Date(),new Date(),'',false,true);
+    selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true);
         
     constructor(
         public detailService: DetailService,
@@ -37,10 +36,10 @@ export class DetailParentComponent implements OnInit{
     }
 
     newRecord(): void{
-        this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',
-        new Date(),new Date(),new Date(),new Date(),'',false,true);
         this.isNew=true;
         this.viewpage=1;
+        this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',null,null,null,null,'awaiting',false,true);
+        
     }
     
     saveRecord(): void{
