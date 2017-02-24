@@ -28,6 +28,8 @@ export class DetailListComponent implements OnInit{
         this.mainDetail.selectedDetail=detail;
     }
 
+
+
     ngOnInit(){
         this.mainDetail.getProjectDetail();
     }

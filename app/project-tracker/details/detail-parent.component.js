@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
 var detail_service_1 = require('./detail.service');
 var project_service_1 = require('../projects/project.service');
@@ -53,6 +54,10 @@ var DetailParentComponent = (function () {
                 _this.refreshList();
             }, 750);
         }
+    };
+    DetailParentComponent.prototype.castDate = function () {
+        var datePipe = new common_1.DatePipe();
+        this.selectedDetail.pt_detail_eststart = datePipe.transform(userdate, 'dd/MM/yyyy');
     };
     DetailParentComponent.prototype.getselectedDetailID = function () {
         var _this = this;

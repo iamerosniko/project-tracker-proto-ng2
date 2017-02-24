@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
 import { DetailService } from './detail.service';
 import { ProjectService } from '../projects/project.service';
@@ -32,14 +33,12 @@ export class DetailParentComponent implements OnInit{
 
     getProjectDetail(): void{
         this.projectService.getProject(this.projectID).then(project => this.project = project);
-       
     }
 
     newRecord(): void{
         this.isNew=true;
         this.viewpage=1;
         this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',null,null,null,null,'awaiting',false,true);
-        
     }
     
     saveRecord(): void{
@@ -59,7 +58,6 @@ export class DetailParentComponent implements OnInit{
             );
         }
     }
-
     getselectedDetailID(){
         this.route.params.subscribe(params => {
             this.projectID = params['id'];});    
