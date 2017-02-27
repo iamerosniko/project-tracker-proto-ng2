@@ -132,6 +132,24 @@
                             
                     </td>
                 </tr>
+                <tr>
+                    <td>On Hold this Project?
+                    <td>Reason
+                        <textarea 
+                            style="resize: vertical;"
+                            type="text" 
+                            class="form-control" 
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_Reason"
+                            name="Reason"
+                            #pt_detail_Reason="ngModel"
+                        >
+                
+                </tr>
+                <tr>
+                    <td>
+                        Progress
+                    </td>
+                </tr>
             </tbody>
         </table>
         <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
