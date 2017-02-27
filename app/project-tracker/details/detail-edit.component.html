@@ -108,6 +108,30 @@
                             
                     </td>
                 </tr>
+                <tr>
+                    <td>Actual Start 
+                    <input
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actstart"
+                            ng2-datetime-picker
+                            name="pt_detail_actstart"
+                            #pt_detail_actstart="ngModel"
+                            date-only="true"
+                             />
+                            
+                    </td>
+                
+                    <td>Actual End
+                    
+                        <input
+                            [(ngModel)]="mainDetail.selectedDetail.pt_detail_actend"
+                            name="pt_detail_actend"
+                            #pt_detail_actend="ngModel"
+                            ng2-datetime-picker
+                            date-only="true" 
+                            />
+                            
+                    </td>
+                </tr>
             </tbody>
         </table>
         <button type="submit" class="btn btn-default" [disabled]="!myForm.form.valid">
