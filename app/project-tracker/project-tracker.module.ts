@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes } from '@angular/router';
 
+import { ProgressbarModule } from 'ng2-bootstrap';
 import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 //Components
 import { ProjectEditComponent } from './projects/project-edit.component';
@@ -25,6 +26,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         CommonModule,
         FormsModule,
         HttpModule,
+        ProgressbarModule.forRoot(),
         // InMemoryWebApiModule.forRoot(ProjectDataService),
         Ng2DatetimePickerModule,
         ProjectTrackerRouting
