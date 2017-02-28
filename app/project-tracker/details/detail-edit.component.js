@@ -36,6 +36,9 @@ var DetailEditComponent = (function () {
             _this.backtoList();
         }, 2000);
     };
+    DetailEditComponent.prototype.getProgressColor = function () {
+        return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
+    };
     Object.defineProperty(DetailEditComponent.prototype, "diagnostic", {
         get: function () { return JSON.stringify(this.mainDetail.selectedDetail); },
         enumerable: true,

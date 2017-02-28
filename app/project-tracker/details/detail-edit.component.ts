@@ -40,5 +40,10 @@ export class DetailEditComponent{
             2000
         );
     }
+
+    getProgressColor(): string{
+        return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
+    }
+    
     get diagnostic() { return JSON.stringify(this.mainDetail.selectedDetail); }
 }
