@@ -11,6 +11,8 @@ import { DetailParentComponent } from './detail-parent.component';
 export class DetailEditComponent{
     @Input() mainDetail:DetailParentComponent;
     submitted = false;
+    showProgress = false;
+    tempVal:number;
     //date: DateModel;
     //options: DatePickerOptions;
     constructor() {
@@ -44,6 +46,16 @@ export class DetailEditComponent{
     getProgressColor(): string{
         return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
     }
-    
+
+    editProgress(): void {
+        this.tempVal=this.mainDetail.selectedDetail.pt_detail_progress;
+        this.showProgress=!this.showProgress;
+    }
+
+    applyProgress(): void{
+        this.mainDetail.selectedDetail.pt_detail_progress=this.tempVal;
+        this.editProgress();
+    }
+
     get diagnostic() { return JSON.stringify(this.mainDetail.selectedDetail); }
 }

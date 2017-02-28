@@ -28,7 +28,9 @@ export class DetailListComponent implements OnInit{
         this.mainDetail.selectedDetail=detail;
     }
 
-
+    getProgressColor(detail: Detail): string{
+        return detail.pt_detail_progress == 0 ? 'black' : 'white';
+    }
 
     ngOnInit(){
         this.mainDetail.getProjectDetail();
