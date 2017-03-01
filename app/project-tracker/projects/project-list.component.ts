@@ -31,4 +31,8 @@ export class ProjectListComponent{
     gotoDetailSelect(project: Project){
         this.mainProject.gotoDetail(project);
     }
+
+    gotoIncidentSelect(project: Project){
+        this.mainProject.gotoIncident(project);
+    }
 }
