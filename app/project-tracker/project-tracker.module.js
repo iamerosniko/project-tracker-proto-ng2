@@ -26,6 +26,7 @@ var incident_parent_component_1 = require('./details/incident-parent.component')
 //service
 var project_service_1 = require('./projects/project.service');
 var detail_service_1 = require('./details/detail.service');
+var incident_service_1 = require('./details/incident.service');
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { ProjectDataService }  from './projects/project-data.service';
 var project_tracker_routing_1 = require('./project-tracker.routing');
@@ -53,7 +54,7 @@ var ProjectTrackerModule = (function () {
                 detail_parent_component_1.DetailParentComponent
             ],
             providers: [
-                project_service_1.ProjectService, detail_service_1.DetailService
+                project_service_1.ProjectService, detail_service_1.DetailService, incident_service_1.IncidentService
             ]
         }), 
         __metadata('design:paramtypes', [])
