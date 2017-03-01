@@ -5,32 +5,22 @@ import { UUID } from 'angular2-uuid';
 import { Detail } from './detail';
 
 @Injectable()
-export class DetailService {
+export class IncidentService {
     private headers = new Headers({'Content-Type': 'application/json'});
-    private detailsUrl = 'api/details';  // testing
+    private detailsUrl = 'api/incidents';  // testing
     //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
 
     constructor(private http: Http){}
     
-    postDetail(newDetail: Detail): Promise<Detail> {
+    postIncident(newDetail: Detail): Promise<Detail> {
         return this.http
             .post(this.detailsUrl, JSON.stringify(newDetail), {headers: this.headers})
             .toPromise()
             .then(res => res.json())  // testing
             .catch(this.handleError);
     }
-
-
-    //getDetails(id: string): Promise<Detail[]> {
-        //return this.http
-          //      .get(this.detailsUrl, {headers: this.headers})
-          //      .toPromise()
-          //      .then(response => response.json().data as Detail[]) //testing
-                //.then(response => response.json())  // live
-         //       .catch(this.handleError);
-    //}
     
-    getDetails(id: string): Promise<Detail[]> {
+    getIncidents(id: string): Promise<Detail[]> {
         const url = `${this.detailsUrl}/?projectID=${id}`;
         return this.http
                 .get(url, {headers: this.headers})
@@ -40,7 +30,7 @@ export class DetailService {
                 .catch(this.handleError);
     }
 
-    getDetail(id: string): Promise<Detail> {
+    getIncident(id: string): Promise<Detail> {
         const url = `${this.detailsUrl}/GetDetail/?detailID=${id}`;
 
         return this.http
@@ -52,7 +42,7 @@ export class DetailService {
 
     }
 
-    putDetail(detail: Detail): Promise<Detail> {
+    putIncident(detail: Detail): Promise<Detail> {
         const url = `${this.detailsUrl}/${detail.pt_project_id}`;
         return this.http
             .put(url, JSON.stringify(detail), {headers: this.headers})
