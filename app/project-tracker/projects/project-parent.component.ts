@@ -47,7 +47,11 @@ export class ProjectParentComponent implements OnInit{
     }
     
     gotoDetail(project:Project){
-        this.router.navigate(['/project', project.pt_project_id]);
+        this.router.navigate(['/tasks', project.pt_project_id]);
+    }
+
+    gotoIncident(project:Project){
+        this.router.navigate(['/incidents', project.pt_project_id]);
     }
 
     ngOnInit(){
