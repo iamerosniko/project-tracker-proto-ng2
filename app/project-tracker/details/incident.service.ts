@@ -8,7 +8,6 @@ import { Detail } from './detail';
 export class IncidentService {
     private headers = new Headers({'Content-Type': 'application/json'});
     private detailsUrl = 'api/incidents';  // testing
-    //private carsUrl = 'http://localhost:3000/api/ng2_cars';  // live
 
     constructor(private http: Http){}
     
@@ -19,13 +18,13 @@ export class IncidentService {
             .then(res => res.json())  // testing
             .catch(this.handleError);
     }
-    
+
     getIncidents(id: string): Promise<Detail[]> {
         const url = `${this.detailsUrl}/?projectID=${id}`;
         return this.http
                 .get(url, {headers: this.headers})
                 .toPromise()
-                .then(response => response.json().data as Detail[]) //testing
+                .then(response => response.json()) //testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
     }
@@ -36,7 +35,7 @@ export class IncidentService {
         return this.http
                 .get(url,{headers: this.headers})
                 .toPromise()
-                .then(response => response.json().data as Detail)  // testing
+                .then(response => response.json())  // testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
 
