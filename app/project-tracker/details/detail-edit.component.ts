@@ -22,8 +22,8 @@ export class DetailEditComponent{
         'High','Medium','Low'
     ];
 
-    detailStatus = [
-        'Awaiting','In Progress','Completed','On Hold'
+    entrytype = [
+        'Task','Incident'
     ];
     
     backtoList(): void {

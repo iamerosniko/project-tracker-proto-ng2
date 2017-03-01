@@ -16,6 +16,7 @@ export class Detail {
         public pt_detail_show: boolean,
         public pt_detail_onhold : boolean,
         public pt_detail_reason : string,
-        public pt_detail_progress : number
+        public pt_detail_progress : number,
+        public pt_detail_entrytype : string
     ){}
 }
