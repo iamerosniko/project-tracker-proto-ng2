@@ -10,4 +10,8 @@ import { Detail } from '../details/detail';
 
 export class ReportViewComponent {
     @Input() details:Detail;
+    
+    getProgressColor(progress:number): string{
+        return progress == 0 ? 'black' : 'white';
+    }
 }

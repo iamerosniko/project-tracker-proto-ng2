@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { UUID } from 'angular2-uuid';
 //Folder : project
-import { ReportService } from './report.service';
 //Folder : Projects
 import { ProjectService } from '../projects/project.service';
 import { Project } from '../projects/project';
@@ -28,7 +27,6 @@ export class ReportParentComponent implements OnInit{
     projectLength : number=0;
 
     constructor(
-        public reportService : ReportService,
         public detailService : DetailService,
         public incidentService : IncidentService,
         private projectService : ProjectService,
