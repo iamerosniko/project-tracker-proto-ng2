@@ -2,11 +2,3 @@
     <project-list [hidden]="!viewpage == 0" [mainProject]="this"></project-list>
     <project-edit [hidden]="!viewpage == 1" [mainProject]="this"></project-edit>
 </div>
-<h3>Project Name</h3>
-<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-     <i class="glyphicon glyphicon-arrow-left" ></i>
-     Previous Project
-</a>
-<a (click)="onSelect(project)" role="button" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-default btn-sm">
-    Next Project <i class="glyphicon glyphicon-arrow-right" ></i>
-</a>

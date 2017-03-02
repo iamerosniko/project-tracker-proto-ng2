@@ -13,7 +13,7 @@ import { IncidentService } from '../details/incident.service';
 import { Detail } from '../details/detail';
 @Component({
     moduleId: module.id,
-    templateUrl:`incident-parent.component.html`
+    templateUrl:`report-parent.component.html`
 })
 
 export class ReportParentComponent implements OnInit{
@@ -46,6 +46,7 @@ export class ReportParentComponent implements OnInit{
         setTimeout(
             () => {
                 this.projectLength=this.projects.length;
+                alert("count : "+this.projectLength);
                 if(this.projectLength>0){
                     this.getAllDetails(this.projects[this.ctr]);
                 }
@@ -60,6 +61,6 @@ export class ReportParentComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.getAllProjects
+        this.getAllProjects();
     }
 }

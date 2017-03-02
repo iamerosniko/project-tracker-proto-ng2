@@ -6,12 +6,15 @@ import { ProjectParentComponent } from './projects/project-parent.component';
 //Details
 import { DetailParentComponent } from './details/detail-parent.component';
 import { IncidentParentComponent } from './details/incident-parent.component';
+//Reports
+import { ReportParentComponent } from './reports/report-parent.component';
 
 const projectTrackerRoutes: Routes = [
     //paths
     { path : 'project-tracker', component: ProjectParentComponent },
     { path : 'tasks/:id', component: DetailParentComponent},
     { path : 'incidents/:id', component: IncidentParentComponent},
+    { path : 'reports' , component: ReportParentComponent}
 ];
 
  @NgModule ({

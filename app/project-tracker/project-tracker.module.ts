@@ -17,10 +17,14 @@ import { DetailListComponent } from './details/detail-list.component';
 import { DetailEditComponent } from './details/detail-edit.component';
 import { DetailParentComponent } from './details/detail-parent.component';
 import { IncidentParentComponent } from './details/incident-parent.component';
+//reports
+import { ReportParentComponent } from './reports/report-parent.component';
+import { ReportViewComponent } from './reports/reportview.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { DetailService } from './details/detail.service';
 import { IncidentService } from './details/incident.service';
+import { ReportService } from './reports/report.service';
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { ProjectDataService }  from './projects/project-data.service';
 import { ProjectTrackerRouting } from './project-tracker.routing';
@@ -44,10 +48,15 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         IncidentParentComponent,
         DetailListComponent,
         DetailEditComponent,
-        DetailParentComponent
+        DetailParentComponent,
+        ReportParentComponent,
+        ReportViewComponent
     ],
     providers: [
-        ProjectService,DetailService,IncidentService
+        ProjectService,
+        DetailService,
+        IncidentService,
+        ReportService
     ]
 })
 
