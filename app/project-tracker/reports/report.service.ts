@@ -10,17 +10,15 @@ export class ReportService {
     private detailsUrl = 'api/reports';  // testing
 
     constructor(private http: Http){}
-    
-    getIncident(id: string): Promise<Detail> {
-        const url = `${this.detailsUrl}/GetDetail/?detailID=${id}`;
 
+    getIncidents(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/GetIncident/?projectID=${id}`;
         return this.http
-                .get(url,{headers: this.headers})
+                .get(url, {headers: this.headers})
                 .toPromise()
-                .then(response => response.json())  // testing
+                .then(response => response.json()) //testing
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
-
     }
 
     private handleError(error: any): Promise<any> {

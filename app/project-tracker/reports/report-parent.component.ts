@@ -23,18 +23,14 @@ export class ReportParentComponent implements OnInit{
     selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Incident');
         
     constructor(
-        public incidentService : IncidentService,
+        public reportService : ReportService,
         private projectService : ProjectService,
         private route: ActivatedRoute,
         private router: Router
     ){ }
 
     refreshList(): void {
-        this.incidentService.getIncidents(this.projectID).then(detail => this.detailList = detail);
-    }
-
-    getProjectDetail(): void{
-        this.projectService.getProject(this.projectID).then(project => this.project = project);
+        this.reportService.getIncidents(this.projectID).then(detail => this.detailList = detail);
     }
 
     newRecord(): void{
