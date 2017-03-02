@@ -41,10 +41,15 @@ var ReportParentComponent = (function () {
             }
         }, 1000);
     };
+    ReportParentComponent.prototype.changePage = function (con) {
+        this.ctr = con ? this.ctr + 1 : this.ctr - 1;
+        this.getAllDetails(this.projects[this.ctr]);
+    };
     ReportParentComponent.prototype.getAllDetails = function (project) {
         var _this = this;
         this.detailService.getDetails(project.pt_project_id).then(function (tasks) { return _this.taskList = tasks; });
         this.incidentService.getIncidents(project.pt_project_id).then(function (incidents) { return _this.incidentList = incidents; });
+        this.currentProject = project;
     };
     ReportParentComponent.prototype.ngOnInit = function () {
         this.getAllProjects();

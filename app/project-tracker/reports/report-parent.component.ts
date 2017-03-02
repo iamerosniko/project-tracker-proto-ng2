@@ -17,7 +17,7 @@ import { Detail } from '../details/detail';
 })
 
 export class ReportParentComponent implements OnInit{
-    
+    currentProject : Project;
     projects : Project[]=null;
     taskList : Detail[]=null;
     completedList : Detail[]=null;
@@ -48,9 +48,15 @@ export class ReportParentComponent implements OnInit{
         );     
     }
 
+    changePage(con:boolean):void{
+        this.ctr = con ? this.ctr+1 : this.ctr-1;
+        this.getAllDetails(this.projects[this.ctr]);
+    }
+
     getAllDetails(project: Project) : void {
         this.detailService.getDetails(project.pt_project_id).then(tasks => this.taskList = tasks);
         this.incidentService.getIncidents(project.pt_project_id).then(incidents => this.incidentList = incidents);
+        this.currentProject=project;
     }
 
     ngOnInit(){
