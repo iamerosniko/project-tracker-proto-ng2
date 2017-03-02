@@ -41,8 +41,25 @@ export class ReportParentComponent implements OnInit{
         //this.reportService.getIncidents(this.projectID).then(detail => this.detailList = detail);
     }
 
+    getAllProjects() : void{
+        this.projectService.getProjects().then(projects => this.projects = projects);       
+        setTimeout(
+            () => {
+                this.projectLength=this.projects.length;
+                if(this.projectLength>0){
+                    this.getAllDetails(this.projects[this.ctr]);
+                }
+            }, 
+            1000
+        );     
+    }
+
+    getAllDetails(project: Project) : void {
+        this.detailService.getDetails(project.pt_project_id).then(tasks => this.taskList = tasks);
+        this.incidentService.getIncidents(project.pt_project_id).then(incidents => this.incidentList = incidents);
+    }
+
     ngOnInit(){
-        //getAllProjects
-        //getAllDetails(project[ctr])
+        this.getAllProjects
     }
 }
