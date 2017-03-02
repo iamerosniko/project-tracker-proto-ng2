@@ -20,16 +20,26 @@ export class DetailService {
             .catch(this.handleError);
     }
 
-
-    //getDetails(id: string): Promise<Detail[]> {
-        //return this.http
-          //      .get(this.detailsUrl, {headers: this.headers})
-          //      .toPromise()
-          //      .then(response => response.json().data as Detail[]) //testing
+    getCompletedItems(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/GetCompletedItems/?projectID=${id}`;
+        return this.http
+                .get(url, {headers: this.headers})
+                .toPromise()
+                .then(response => response.json()) //testing
                 //.then(response => response.json())  // live
-         //       .catch(this.handleError);
-    //}
+                .catch(this.handleError);
+    }
     
+    getOnHoldItems(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/GetOnholdItems/?projectID=${id}`;
+        return this.http
+                .get(url, {headers: this.headers})
+                .toPromise()
+                .then(response => response.json()) //testing
+                //.then(response => response.json())  // live
+                .catch(this.handleError);
+    }
+
     getDetails(id: string): Promise<Detail[]> {
         const url = `${this.detailsUrl}/?projectID=${id}`;
         return this.http
