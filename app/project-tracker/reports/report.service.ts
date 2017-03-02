@@ -20,6 +20,17 @@ export class ReportService {
                 //.then(response => response.json())  // live
                 .catch(this.handleError);
     }
+    
+    getTasks(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/?projectID=${id}`;
+        return this.http
+                .get(url, {headers: this.headers})
+                .toPromise()
+                .then(response => response.json().data as Detail[]) //testing
+                //.then(response => response.json())  // live
+                .catch(this.handleError);
+    }
+
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
