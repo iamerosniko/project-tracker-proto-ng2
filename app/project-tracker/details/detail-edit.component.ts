@@ -31,7 +31,19 @@ export class DetailEditComponent{
         this.mainDetail.refreshList();
     }
 
+    updateStatus(): void {
+        if (this.mainDetail.selectedDetail.pt_detail_progress==0){
+            this.mainDetail.selectedDetail.pt_detail_status="Awaiting";
+        }
+        else if(this.mainDetail.selectedDetail.pt_detail_progress<100){
+            this.mainDetail.selectedDetail.pt_detail_status="On Going";
+        }
+        else
+            this.mainDetail.selectedDetail.pt_detail_status="Completed";
+    }
+
     onSubmit(): void {
+        this.showProgress=false;
         this.submitted = true;
         this.mainDetail.saveRecord();
         setTimeout(
@@ -55,6 +67,7 @@ export class DetailEditComponent{
     applyProgress(): void{
         this.mainDetail.selectedDetail.pt_detail_progress=this.tempVal;
         this.editProgress();
+        this.updateStatus();
     }
 
     get diagnostic() { return JSON.stringify(this.mainDetail.selectedDetail); }
