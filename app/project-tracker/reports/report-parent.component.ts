@@ -26,9 +26,8 @@ export class ReportParentComponent implements OnInit{
 
     projectID : string ='';
     ctr : number = 0;
-    isNew : boolean = false;
-    selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Incident');
-        
+    projectLength : number = 0;
+
     constructor(
         public reportService : ReportService,
         public detailService : DetailService,
@@ -41,14 +40,9 @@ export class ReportParentComponent implements OnInit{
     refreshList(): void {
         //this.reportService.getIncidents(this.projectID).then(detail => this.detailList = detail);
     }
-    
-    getselectedDetailID(){
-        this.route.params.subscribe(params => {
-            this.projectID = params['id'];});    
-    }
 
     ngOnInit(){
-        this.getselectedDetailID();
-        this.refreshList();
+        //getAllProjects
+        //getAllDetails(project[ctr])
     }
 }
