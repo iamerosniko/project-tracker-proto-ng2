@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { UUID } from 'angular2-uuid';
-import { ActivatedRoute,  Params, Router } from '@angular/router';
 //Folder : project
 import { ReportService } from './report.service';
 //Folder : Projects
@@ -11,42 +10,36 @@ import { Project } from '../projects/project';
 import { DetailService } from '../details/detail.service';
 import { IncidentService } from '../details/incident.service'; 
 import { Detail } from '../details/detail';
+
 @Component({
     moduleId: module.id,
     templateUrl:`report-parent.component.html`
 })
 
 export class ReportParentComponent implements OnInit{
-    projects : Project[];
+    
+    projects : Project[]=null;
+    taskList : Detail[]=null;
+    completedList : Detail[]=null;
+    incidentList : Detail[]=null;
+    onholdList : Detail[]=null;
 
-    taskList : Detail[];
-    completedList : Detail[];
-    incidentList : Detail[];
-    onholdList : Detail[];
-
-    projectID : string ='';
     ctr : number = 0;
-    projectLength : number = 0;
+    projectLength : number=0;
 
     constructor(
         public reportService : ReportService,
         public detailService : DetailService,
         public incidentService : IncidentService,
         private projectService : ProjectService,
-        private route: ActivatedRoute,
-        private router: Router
     ){ }
-
-    refreshList(): void {
-        //this.reportService.getIncidents(this.projectID).then(detail => this.detailList = detail);
-    }
 
     getAllProjects() : void{
         this.projectService.getProjects().then(projects => this.projects = projects);       
         setTimeout(
             () => {
                 this.projectLength=this.projects.length;
-                alert("count : "+this.projectLength);
+                //alert("count : "+this.projectLength);
                 if(this.projectLength>0){
                     this.getAllDetails(this.projects[this.ctr]);
                 }
