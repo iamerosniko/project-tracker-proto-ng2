@@ -31,17 +31,23 @@ export class ReportParentComponent implements OnInit{
     ){ }
 
     getAllProjects() : void{
-        this.projectService.getProjects().then(projects => this.projects = projects);       
-        setTimeout(
-            () => {
-                this.projectLength=this.projects.length;
-                //alert("count : "+this.projectLength);
-                if(this.projectLength>0){
-                    this.getAllDetails(this.projects[this.ctr]);
-                }
-            }, 
-            1000
-        );     
+        // this.projectService.getProjects().then(projects => this.projects = projects);       
+        // setTimeout(
+        //     () => {
+        //         this.projectLength=this.projects.length;
+        //         //alert("count : "+this.projectLength);
+        //         if(this.projectLength>0){
+        //             this.getAllDetails(this.projects[this.ctr]);
+        //         }
+        //     }, 
+        //     1000
+        // );     
+        this.projectService.getProjects()
+        .then(projects =>{ 
+            this.projects = projects,
+            this.projectLength=this.projects.length,
+            this.projectLength > 0 ? this.getAllDetails(this.projects[this.ctr]) : null;
+         });
     }
 
     changePage(con:boolean):void{
