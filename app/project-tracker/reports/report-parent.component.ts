@@ -7,7 +7,6 @@ import { ProjectService } from '../projects/project.service';
 import { Project } from '../projects/project';
 //Folder : Details
 import { DetailService } from '../details/detail.service';
-import { IncidentService } from '../details/incident.service'; 
 import { Detail } from '../details/detail';
 
 @Component({
@@ -28,7 +27,6 @@ export class ReportParentComponent implements OnInit{
 
     constructor(
         public detailService : DetailService,
-        public incidentService : IncidentService,
         private projectService : ProjectService,
     ){ }
 
@@ -52,8 +50,8 @@ export class ReportParentComponent implements OnInit{
     }
 
     getAllDetails(project: Project) : void {
-        this.detailService.getDetails(project.pt_project_id).then(tasks => this.taskList = tasks);
-        this.incidentService.getIncidents(project.pt_project_id).then(incidents => this.incidentList = incidents);
+        this.detailService.getTaskItems(project.pt_project_id).then(tasks => this.taskList = tasks);
+        this.detailService.getIncidentItems(project.pt_project_id).then(incidents => this.incidentList = incidents);
         this.detailService.getCompletedItems(project.pt_project_id).then(complete => this.completedList=complete);
         this.detailService.getOnHoldItems(project.pt_project_id).then(onhold => this.onholdList=onhold);
         this.currentProjectName=project.pt_project_name;

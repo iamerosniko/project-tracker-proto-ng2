@@ -23,7 +23,6 @@ import { ReportViewComponent } from './reports/reportview.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { DetailService } from './details/detail.service';
-import { IncidentService } from './details/incident.service';
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { ProjectDataService }  from './projects/project-data.service';
 import { ProjectTrackerRouting } from './project-tracker.routing';
@@ -54,7 +53,6 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
     providers: [
         ProjectService,
         DetailService,
-        IncidentService
     ]
 })
 

@@ -40,6 +40,26 @@ export class DetailService {
                 .catch(this.handleError);
     }
 
+    getIncidentItems(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/GetIncidentItems/?projectID=${id}`;
+        return this.http
+                .get(url, {headers: this.headers})
+                .toPromise()
+                .then(response => response.json()) //testing
+                //.then(response => response.json())  // live
+                .catch(this.handleError);
+    }
+
+    getTaskItems(id: string): Promise<Detail[]> {
+        const url = `${this.detailsUrl}/GetTaskItems/?projectID=${id}`;
+        return this.http
+                .get(url, {headers: this.headers})
+                .toPromise()
+                .then(response => response.json()) //testing
+                //.then(response => response.json())  // live
+                .catch(this.handleError);
+    }
+
     getDetails(id: string): Promise<Detail[]> {
         const url = `${this.detailsUrl}/?projectID=${id}`;
         return this.http

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute,  Params, Router } from '@angular/router';
-import { IncidentService } from './incident.service';
+import { DetailService } from './detail.service';
 import { ProjectService } from '../projects/project.service';
 import { Detail } from './detail';
 import { Project } from '../projects/project';
@@ -21,14 +21,14 @@ export class IncidentParentComponent implements OnInit{
     selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Incident');
         
     constructor(
-        public incidentService : IncidentService,
+        public detailService : DetailService,
         private projectService : ProjectService,
         private route: ActivatedRoute,
         private router: Router
     ){ }
 
     refreshList(): void {
-        this.incidentService.getIncidents(this.projectID).then(detail => this.detailList = detail);
+        this.detailService.getIncidentItems(this.projectID).then(detail => this.detailList = detail);
     }
 
     getProjectDetail(): void{
@@ -42,14 +42,14 @@ export class IncidentParentComponent implements OnInit{
     }
     
     saveRecord(): void{
-        this.isNew ? this.incidentService.postIncident(this.selectedDetail) : this.incidentService.putIncident(this.selectedDetail);
+        this.isNew ? this.detailService.postDetail(this.selectedDetail) : this.detailService.putDetail(this.selectedDetail);
         this.isNew=false;
     }
 
     deleteRecord(detail:Detail): void{
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted=true;
-            this.incidentService.putIncident(detail);
+            this.detailService.putDetail(detail);
             setTimeout(
                 () => {
                     this.refreshList();
