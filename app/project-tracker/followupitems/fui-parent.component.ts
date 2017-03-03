@@ -30,7 +30,20 @@ export class FuiParentComponent implements OnInit{
     }
     
     saveRecord(): void{
-        this.isNew ? this.fuiService.postFui(this.selectedFui) : this.fuiService.putFui(this.selectedFui);
+        this.isNew 
+        ? this.fuiService.postFui(this.selectedFui).then(
+            any => {
+                this.backtoList();
+            })
+        : this.fuiService.putFui(this.selectedFui).then(
+            any => {
+                this.backtoList();
+            });
+    }
+
+    backtoList(): void {
+        this.viewpage=0;
+        this.refreshList();
         this.isNew=false;
     }
 
