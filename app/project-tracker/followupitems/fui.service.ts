@@ -31,7 +31,7 @@ export class FuiService {
     }
 
     getFui(id: string): Promise<Fui> {
-        const url = `${this.fuiUrl}/?projectID=${id}`;
+        const url = `${this.fuiUrl}/?FuiID=${id}`;
         return this.http
                 .get(url)
                 .toPromise()
@@ -41,12 +41,12 @@ export class FuiService {
                  
     }
 
-    putFui(project: Fui): Promise<Fui> {
-        const url = `${this.fuiUrl}/${project.pt_project_id}`;
+    putFui(Fui: Fui): Promise<Fui> {
+        const url = `${this.fuiUrl}/${Fui.pt_fui_id}`;
         return this.http
-            .put(url, JSON.stringify(project), {headers: this.headers})
+            .put(url, JSON.stringify(Fui), {headers: this.headers})
             .toPromise()
-            .then(() => project)
+            .then(() => Fui)
             .catch(this.handleError);
     }
 

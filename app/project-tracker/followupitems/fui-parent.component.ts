@@ -20,7 +20,7 @@ export class FuiParentComponent implements OnInit{
     ){ }
 
     refreshList(): void {
-        this.fuiService.getFuis().then(project => this.fuiList = project );
+        this.fuiService.getFuis().then(Fui => this.fuiList = Fui );
     }
 
     newRecord(): void{

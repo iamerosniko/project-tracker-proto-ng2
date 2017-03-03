@@ -13,7 +13,7 @@ import { Fui } from './fui';
 export class FuiListComponent{
     @Input() mainFui:FuiParentComponent;
 
-    newProject(): void {
+    newFui(): void {
         this.mainFui.newRecord();
     }
 

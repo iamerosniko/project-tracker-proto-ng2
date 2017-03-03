@@ -1,30 +1,29 @@
 <div [hidden]="!submitted">
     <h3>Form successfully submitted!</h3>
-    <p><strong>You're being redirected to cars list in 2 sec automatically ...</strong></p>
 </div>
 {{diagnostic}}
 <div [hidden]="submitted">
     <br />
     <a class="btn btn-primary btn-sm" role="button" (click)="backtoList()">Back to List</a>
-    <h6>Project Edit Form</h6>
+    <h6>Fui Edit Form</h6>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
         <div class="form-group" [hidden]="!submitted">
-            <label for="projectid">Project id</label>
+            <label for="Fuiid">Fui id</label>
             <input type="text"
                    class="form-control"
-                   [(ngModel)]="mainProject.selectedProject.pt_project_id"
-                   name="projectid"
-                   #pt_project_id="ngModel"
+                   [(ngModel)]="mainFui.selectedFui.pt_Fui_id"
+                   name="Fuiid"
+                   #pt_Fui_id="ngModel"
                    required>
         </div>
         <div class="form-group">
-            <label for="projectName">Project Name</label>
+            <label for="FuiName">Fui Name</label>
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.pt_project_name"
-                name="projectName"
-                #pt_project_name="ngModel"
+                [(ngModel)]="mainFui.selectedFui.pt_Fui_name"
+                name="FuiName"
+                #pt_Fui_name="ngModel"
                 required 
             >
         </div>
@@ -33,9 +32,9 @@
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.pt_project_desc"
+                [(ngModel)]="mainFui.selectedFui.pt_Fui_desc"
                 name="description"
-                #pt_project_desc="ngModel"
+                #pt_Fui_desc="ngModel"
             >
         </div>
         
@@ -43,9 +42,9 @@
             <label for="technology">Technology</label>
             <select 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.pt_project_tech"
+                [(ngModel)]="mainFui.selectedFui.pt_Fui_tech"
                 name="technology"
-                #pt_project_tech="ngModel"
+                #pt_Fui_tech="ngModel"
                 required 
             >
                 <option *ngFor="let ft of technology" [value]="ft">{{ft}}</option>
@@ -56,9 +55,9 @@
             <input 
                 type="text" 
                 class="form-control" 
-                [(ngModel)]="mainProject.selectedProject.pt_project_owner"
+                [(ngModel)]="mainFui.selectedFui.pt_Fui_owner"
                 name="owner"
-                #pt_project_owner="ngModel"
+                #pt_Fui_owner="ngModel"
                 required 
             >
         </div>
