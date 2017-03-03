@@ -20,9 +20,15 @@ import { IncidentParentComponent } from './details/incident-parent.component';
 //reports
 import { ReportParentComponent } from './reports/report-parent.component';
 import { ReportViewComponent } from './reports/reportview.component';
+//followupitems
+import { FuiEditComponent } from './followupitems/fui-edit.component';
+import { FuiListComponent } from './followupitems/fui-list.component';
+import { FuiParentComponent } from './followupitems/fui-parent.component';
 //service
 import { ProjectService } from './projects/project.service';
 import { DetailService } from './details/detail.service';
+import { FuiService } from './followupitems/fui.service';
+
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { ProjectDataService }  from './projects/project-data.service';
 import { ProjectTrackerRouting } from './project-tracker.routing';
@@ -48,11 +54,15 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         DetailEditComponent,
         DetailParentComponent,
         ReportParentComponent,
-        ReportViewComponent
+        ReportViewComponent,
+        FuiEditComponent,
+        FuiListComponent,
+        FuiParentComponent
     ],
     providers: [
         ProjectService,
         DetailService,
+        FuiService
     ]
 })
 
