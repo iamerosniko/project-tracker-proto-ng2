@@ -36,13 +36,16 @@ export class ProjectParentComponent implements OnInit{
     deleteRecord(project:Project): void{
         if (confirm("Are you sure you want to delete?")) {
             project.pt_project_deleted=true;
-            this.projectService.putProject(project);
-            setTimeout(
-                () => {
-                    this.refreshList();
-                }, 
-                750
-            );
+            // this.projectService.putProject(project);
+            // setTimeout(
+            //     () => {
+            //         this.refreshList();
+            //     }, 
+            //     750
+            // );
+            this.projectService.putProject(project).then(any=>{
+                this.refreshList();
+            });
         }
     }
     

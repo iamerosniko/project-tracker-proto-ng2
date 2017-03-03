@@ -49,13 +49,16 @@ export class DetailParentComponent implements OnInit{
     deleteRecord(detail:Detail): void{
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted=true;
-            this.detailService.putDetail(detail);
-            setTimeout(
-                () => {
-                    this.refreshList();
-                }, 
-                750
-            );
+            // this.detailService.putDetail(detail);
+            // setTimeout(
+            //     () => {
+            //         this.refreshList();
+            //     }, 
+            //     750
+            // );
+            this.detailService.putDetail(detail).then(any=>{
+                this.refreshList();
+            });
         }
     }
     getselectedDetailID(){
