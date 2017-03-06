@@ -55,6 +55,12 @@ export class ReportParentComponent implements OnInit{
         this.detailService.getOnHoldItems(project.pt_project_id).then(onhold => this.onholdList=onhold);
         this.fuiService.getFuis().then(fui => this.fuiList = fui);
         this.currentProjectName=project.pt_project_name;
+        
+    }
+
+    tabChange():void{
+        this.ctr=0;
+        this.getAllDetails(this.projects[this.ctr]);
     }
 
     ngOnInit(){
