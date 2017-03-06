@@ -20,6 +20,7 @@ import { IncidentParentComponent } from './details/incident-parent.component';
 //reports
 import { ReportParentComponent } from './reports/report-parent.component';
 import { ReportViewComponent } from './reports/reportview.component';
+import { ReportFuiComponent } from './reports/reportfui.component';
 //followupitems
 import { FuiEditComponent } from './followupitems/fui-edit.component';
 import { FuiListComponent } from './followupitems/fui-list.component';
@@ -55,6 +56,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         DetailParentComponent,
         ReportParentComponent,
         ReportViewComponent,
+        ReportFuiComponent,
         FuiEditComponent,
         FuiListComponent,
         FuiParentComponent
