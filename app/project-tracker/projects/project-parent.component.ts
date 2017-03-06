@@ -5,6 +5,7 @@ import { ProjectService } from './project.service';
 import { UUID } from 'angular2-uuid';
 @Component({
     moduleId: module.id,
+    selector:`sample`,
     templateUrl:`project-parent.component.html`
 })
 

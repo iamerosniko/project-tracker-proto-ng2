@@ -62,6 +62,7 @@ var ProjectParentComponent = (function () {
     ProjectParentComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
+            selector: "sample",
             templateUrl: "project-parent.component.html"
         }), 
         __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
