@@ -17,13 +17,18 @@ export class FuiListComponent{
         this.mainFui.newRecord();
     }
 
-    delete(detail: Fui){
-        this.mainFui.deleteRecord(detail);
+    delete(fui: Fui):void{
+        this.mainFui.deleteRecord(fui);
     }
 
-    onSelect(detail: Fui) {
+    markComplete(fui:Fui):void{
+        fui.pt_fui_issolved=true;
+        this.mainFui.fuiService.putFui(fui);
+    }
+
+    onSelect(fui: Fui) {
         this.mainFui.isNew=false;
         this.mainFui.viewpage=1;
-        this.mainFui.selectedFui=detail;
+        this.mainFui.selectedFui=fui;
     }
 }
