@@ -51,7 +51,7 @@ export class FuiService {
     }
 
     deleteFui(id: string): Promise<void> {
-        const url = `${this.fuiUrl}/${id}`;
+        const url = `${this.fuiUrl}/Delete/?fuiID=${id}`;
 
         return this.http.delete(url, {headers: this.headers})
                 .toPromise()
