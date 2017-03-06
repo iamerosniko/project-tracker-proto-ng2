@@ -12,7 +12,7 @@ import { Fui } from './fui';
 
 export class FuiListComponent{
     @Input() mainFui:FuiParentComponent;
-
+    tempVal:string='';
     newFui(): void {
         this.mainFui.newRecord();
     }

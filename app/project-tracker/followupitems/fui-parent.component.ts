@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fui } from './fui';
+import { Project } from '../projects/project';
 import { FuiService } from './fui.service';
+import { ProjectService } from '../projects/project.service';
 import { UUID } from 'angular2-uuid';
 
 @Component({
@@ -11,16 +13,20 @@ import { UUID } from 'angular2-uuid';
 
 export class FuiParentComponent implements OnInit{
     fuiList : Fui[];
+    projectList : Project[];
     viewpage : number = 0;
     isNew : boolean = false;
     selectedFui : Fui = new Fui('','','','','',false);
+
     constructor(
         private router: Router,
+        public projectService: ProjectService,
         public fuiService: FuiService
     ){ }
 
     refreshList(): void {
         this.fuiService.getFuis().then(Fui => this.fuiList = Fui );
+        this.projectService.getProjects().then(proj => this.projectList = proj);
     }
 
     newRecord(): void{

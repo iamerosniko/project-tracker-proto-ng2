@@ -20,6 +20,7 @@ export class FuiEditComponent{
     onSubmit(): void {
         this.submitted = true;
         this.mainFui.saveRecord();
+        this.submitted = false;
     }
     get diagnostic() { return JSON.stringify(this.mainFui.selectedFui); }
 }
