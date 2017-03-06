@@ -16,13 +16,17 @@ var FuiListComponent = (function () {
     FuiListComponent.prototype.newFui = function () {
         this.mainFui.newRecord();
     };
-    FuiListComponent.prototype.delete = function (detail) {
-        this.mainFui.deleteRecord(detail);
+    FuiListComponent.prototype.delete = function (fui) {
+        this.mainFui.deleteRecord(fui);
     };
-    FuiListComponent.prototype.onSelect = function (detail) {
+    FuiListComponent.prototype.markComplete = function (fui) {
+        fui.pt_fui_issolved = true;
+        this.mainFui.fuiService.putFui(fui);
+    };
+    FuiListComponent.prototype.onSelect = function (fui) {
         this.mainFui.isNew = false;
         this.mainFui.viewpage = 1;
-        this.mainFui.selectedFui = detail;
+        this.mainFui.selectedFui = fui;
     };
     __decorate([
         core_1.Input(), 
