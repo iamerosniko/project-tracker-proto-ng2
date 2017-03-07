@@ -13,6 +13,7 @@ import { UUID } from 'angular2-uuid';
 })
 
 export class IncidentParentComponent implements OnInit{
+    tag='Incidents';
     project : Project = new Project('','','','','',false,false);
     detailList : Detail[];
     projectID : string ='';

@@ -56,7 +56,6 @@ export class DetailService {
                 .get(url, {headers: this.headers})
                 .toPromise()
                 .then(response => response.json()) //testing
-                //.then(response => response.json())  // live
                 .catch(this.handleError);
     }
 
@@ -65,8 +64,7 @@ export class DetailService {
         return this.http
                 .get(url, {headers: this.headers})
                 .toPromise()
-                .then(response => response.json().data as Detail[]) //testing
-                //.then(response => response.json())  // live
+                .then(response => response.json()) //testing
                 .catch(this.handleError);
     }
 
@@ -76,8 +74,7 @@ export class DetailService {
         return this.http
                 .get(url,{headers: this.headers})
                 .toPromise()
-                .then(response => response.json().data as Detail)  // testing
-                //.then(response => response.json())  // live
+                .then(response => response.json())  // testing
                 .catch(this.handleError);
 
     }

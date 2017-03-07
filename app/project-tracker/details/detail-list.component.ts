@@ -12,7 +12,8 @@ import { Detail } from './detail';
 
 export class DetailListComponent implements OnInit{
     @Input() mainDetail:DetailParentComponent;
-
+    @Input() tag:string;
+    
     newProject(): void {
         this.mainDetail.newRecord();
     }
