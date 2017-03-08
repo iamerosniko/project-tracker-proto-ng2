@@ -12,6 +12,7 @@ export class DetailEditComponent{
     @Input() mainDetail:DetailParentComponent;
     submitted = false;
     showProgress = false;
+    actualdaterequired: number = 0;
     tempVal:number;
     //date: DateModel;
     //options: DatePickerOptions;
@@ -31,17 +32,6 @@ export class DetailEditComponent{
         this.mainDetail.refreshList();
     }
 
-    updateStatus(): void {
-        if (this.mainDetail.selectedDetail.pt_detail_progress==0){
-            this.mainDetail.selectedDetail.pt_detail_status="Awaiting";
-        }
-        else if(this.mainDetail.selectedDetail.pt_detail_progress<100){
-            this.mainDetail.selectedDetail.pt_detail_status="On Going";
-        }
-        else
-            this.mainDetail.selectedDetail.pt_detail_status="Completed";
-    }
-
     onSubmit(): void {
         this.showProgress=false;
         this.submitted = true;
@@ -57,6 +47,21 @@ export class DetailEditComponent{
 
     getProgressColor(): string{
         return this.mainDetail.selectedDetail.pt_detail_progress == 0 ? 'black' : 'white';
+    }
+
+    updateStatus(): void {
+        if (this.mainDetail.selectedDetail.pt_detail_progress==0){
+            this.mainDetail.selectedDetail.pt_detail_status="Awaiting";
+            this.actualdaterequired=0;
+        }
+        else if(this.mainDetail.selectedDetail.pt_detail_progress<100){
+            this.mainDetail.selectedDetail.pt_detail_status="On Going";
+            this.actualdaterequired=1;
+        }
+        else{
+            this.mainDetail.selectedDetail.pt_detail_status="Completed";
+            this.actualdaterequired=2;
+        }
     }
 
     editProgress(): void {
