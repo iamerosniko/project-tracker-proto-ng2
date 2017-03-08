@@ -7,6 +7,7 @@ import { Routes } from '@angular/router';
 import { ProgressbarModule } from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap';
 import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
+import { TooltipModule } from 'ng2-bootstrap';
 
 //Components
 import { ProjectEditComponent } from './projects/project-edit.component';
@@ -41,6 +42,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         HttpModule,
         TabsModule.forRoot(),
         ProgressbarModule.forRoot(),
+        TooltipModule.forRoot(),
         // InMemoryWebApiModule.forRoot(ProjectDataService),
         Ng2DatetimePickerModule,
         ProjectTrackerRouting
