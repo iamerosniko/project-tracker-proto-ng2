@@ -20,7 +20,7 @@ export class IncidentParentComponent implements OnInit{
     viewpage : number = 0;
     isNew : boolean = false;
     selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Incident');
-        
+    actualdaterequired: number = 0;   
     constructor(
         public detailService : DetailService,
         private projectService : ProjectService,
@@ -47,16 +47,24 @@ export class IncidentParentComponent implements OnInit{
         this.isNew=false;
     }
 
+    updateStatus(): void {
+        if (this.selectedDetail.pt_detail_progress==0){
+            this.selectedDetail.pt_detail_status="Awaiting";
+            this.actualdaterequired=0;
+        }
+        else if(this.selectedDetail.pt_detail_progress<100){
+            this.selectedDetail.pt_detail_status="On Going";
+            this.actualdaterequired=1;
+        }
+        else{
+            this.selectedDetail.pt_detail_status="Completed";
+            this.actualdaterequired=2;
+        }
+    }
+
     deleteRecord(detail:Detail): void{
         if (confirm("Are you sure you want to delete?")) {
             detail.pt_detail_deleted=true;
-            // this.detailService.putDetail(detail);
-            // setTimeout(
-            //     () => {
-            //         this.refreshList();
-            //     }, 
-            //     750
-            // );
             this.detailService.putDetail(detail).then(any=>{
                 this.refreshList();
             });

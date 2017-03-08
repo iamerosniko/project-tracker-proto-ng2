@@ -27,6 +27,7 @@ export class DetailListComponent implements OnInit{
         this.mainDetail.isNew=false;
         this.mainDetail.viewpage=1;
         this.mainDetail.selectedDetail=detail;
+        this.mainDetail.updateStatus();
     }
 
     getProgressColor(detail: Detail): string{
