@@ -4,6 +4,7 @@ import { UUID } from 'angular2-uuid';
 import { DetailParentComponent } from './detail-parent.component';
 import { Detail } from './detail';
 
+
 @Component({
     moduleId: module.id,
     templateUrl: 'detail-list.component.html',
@@ -13,7 +14,7 @@ import { Detail } from './detail';
 export class DetailListComponent implements OnInit{
     @Input() mainDetail:DetailParentComponent;
     @Input() tag:string;
-    
+
     newProject(): void {
         this.mainDetail.newRecord();
     }

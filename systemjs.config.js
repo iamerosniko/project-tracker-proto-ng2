@@ -31,6 +31,7 @@
       'angular2-uuid': 'npm:angular2-uuid/index.js',
       'ng2-datetime-picker':'npm:ng2-datetime-picker/dist',
       'ng2-bootstrap':'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js',
+      'ng2-google-charts':'npm:ng2-google-charts/bundles/ng2-google-charts.umd.min.js',
       //'moment': 'npm:moment/moment.js',
       //express  
       'express' : 'npm:express'

@@ -8,7 +8,7 @@ import { ProgressbarModule } from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap';
 import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 import { TooltipModule } from 'ng2-bootstrap';
-
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 //Components
 import { ProjectEditComponent } from './projects/project-edit.component';
 import { ProjectListComponent } from './projects/project-list.component';
@@ -43,6 +43,7 @@ import { ProjectTrackerRouting } from './project-tracker.routing';
         TabsModule.forRoot(),
         ProgressbarModule.forRoot(),
         TooltipModule.forRoot(),
+        Ng2GoogleChartsModule,
         // InMemoryWebApiModule.forRoot(ProjectDataService),
         Ng2DatetimePickerModule,
         ProjectTrackerRouting

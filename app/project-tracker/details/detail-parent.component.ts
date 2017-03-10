@@ -6,6 +6,7 @@ import { ProjectService } from '../projects/project.service';
 import { Detail } from './detail';
 import { Project } from '../projects/project';
 import { UUID } from 'angular2-uuid';
+import { Gantt } from './gantt';
 
 @Component({
     moduleId: module.id,
@@ -21,6 +22,10 @@ export class DetailParentComponent implements OnInit{
     isNew : boolean = false;
     selectedDetail : Detail = new Detail('','','','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Task');
     actualdaterequired: number = 0;
+
+    actualGantt:Gantt[]=null;
+    estimateGantt:Gantt[];
+
     constructor(
         public detailService: DetailService,
         private projectService : ProjectService,
@@ -29,17 +34,34 @@ export class DetailParentComponent implements OnInit{
     ){ }
 
     refreshList(): void {
-        this.detailService.getDetails(this.projectID).then(detail => this.detailList = detail);
+        this.detailService.getDetails(this.projectID)
+        .then(detail => this.detailList = detail)
+        .then(y=>{
+            this.getGantt();
+        });;
     }
-
     getProjectDetail(): void{
-        this.projectService.getProject(this.projectID).then(project => this.project = project);
+        this.projectService.getProject(this.projectID)
+        .then(project => {
+            this.project = project;
+        })
+    }
+    
+    getGantt():void{
+        // let ctr:number = 1 ;
+        // for (let entry of this.detailList) {
+        //     //console.log(entry); 
+        //     this.actualGantt.push("task",entry.pt_detail_actstart,entry.pt_detail_actend);
+        // }
     }
 
     newRecord(): void{
         this.isNew=true;
         this.viewpage=1;
-        this.selectedDetail=new Detail(UUID.UUID(),this.projectID,'','','','','',null,null,null,null,'awaiting',false,true,false,'',0,'Task');
+        this.selectedDetail=new Detail(
+            UUID.UUID(),this.projectID,'','','','','',null,null,null,null,'awaiting',
+            false,true,false,'',0,'Task'
+            );
     }
     
     saveRecord(): void{

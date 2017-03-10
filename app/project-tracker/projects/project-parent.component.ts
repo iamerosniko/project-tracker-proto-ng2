@@ -14,6 +14,7 @@ export class ProjectParentComponent implements OnInit{
     viewpage : number = 0;
     isNew : boolean = false;
     selectedProject : Project = new Project('','','','','',false,true);
+
     constructor(
         private router: Router,
         public projectService: ProjectService
@@ -33,17 +34,10 @@ export class ProjectParentComponent implements OnInit{
         this.isNew ? this.projectService.postProject(this.selectedProject) : this.projectService.putProject(this.selectedProject);
         this.isNew=false;
     }
-
+    
     deleteRecord(project:Project): void{
         if (confirm("Are you sure you want to delete?")) {
             project.pt_project_deleted=true;
-            // this.projectService.putProject(project);
-            // setTimeout(
-            //     () => {
-            //         this.refreshList();
-            //     }, 
-            //     750
-            // );
             this.projectService.putProject(project).then(any=>{
                 this.refreshList();
             });
